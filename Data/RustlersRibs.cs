@@ -34,7 +34,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                var instructions = new List<string>();
+                List<string> instructions = new List<string>();
                 return instructions;
             }
         }

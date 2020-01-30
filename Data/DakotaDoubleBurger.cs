@@ -109,7 +109,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                var instructions = new List<string>();
+                List<string> instructions = new List<string>();
 
                 if (!tomato) { instructions.Add("hold tomato"); }
                 if (!lettuce) { instructions.Add("hold lettuce"); }
