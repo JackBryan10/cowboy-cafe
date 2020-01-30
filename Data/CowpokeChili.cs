@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Filename: CowpokeChili.cs
+ * Author: *previously provided*
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -53,10 +56,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public double Price
         {
-            get
-            {
-                return 6.10;
-            }
+            get { return 6.10; }
         }
 
         /// <summary>
@@ -64,10 +64,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public uint Calories
         {
-            get
-            {
-                return 171;
-            }
+            get { return 171; }
         }
 
         /// <summary>
