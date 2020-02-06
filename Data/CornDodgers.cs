@@ -8,12 +8,12 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Chili Cheese Fries side
+    /// A class representing the Corn Dodgers side
     /// </summary>
-    public class ChiliCheeseFries: Side
+    public class CornDodgers : Side
     {
         /// <summary>
-        /// The calories of the Chili Cheese Fries
+        /// The calories of the Corn Dodgers
         /// </summary>
         public override uint Calories
         {
@@ -22,11 +22,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 610;
+                        return 717;
                     case Size.Medium:
-                        return 524;
+                        return 685;
                     case Size.Small:
-                        return 433;
+                        return 512;
                     default:
                         throw new NotImplementedException("Unknown Size");
                 }
@@ -34,7 +34,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The price of the Chili Cheese Fries
+        /// The price of the Corn Dodgers
         /// </summary>
         public override double Price
         {
@@ -43,11 +43,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 3.99;
-                    case Size.Medium:
-                        return 2.99;
-                    case Size.Small:
                         return 1.99;
+                    case Size.Medium:
+                        return 1.79;
+                    case Size.Small:
+                        return 1.59;
                     default:
                         throw new NotImplementedException("Unknown Size");
                 }
@@ -55,3 +55,4 @@ namespace CowboyCafe.Data
         }
     }
 }
+
