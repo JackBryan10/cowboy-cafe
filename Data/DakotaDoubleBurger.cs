@@ -1,6 +1,7 @@
-﻿/* Filename: DakotaDoubleBurger.cs
- * Author: Jack Walter
- */
+﻿/* Author: Jack Walter
+ * Class Name: DakotaDoubleBurger.cs
+ * Purpose: A class representing a Dakota Double Burger entree
+*/
 using System;
 using System.Collections.Generic;
 

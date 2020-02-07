@@ -1,7 +1,7 @@
-﻿/* Filename: PecosPulledPork.cs
- * Author: Jack Walter
- */
-
+﻿/* Author: Jack Walter
+ * Class Name: PecosPulledPork.cs
+ * Purpose: A class representing the Pecos Pulled Pork entree
+*/
 using System;
 using System.Collections.Generic;
 

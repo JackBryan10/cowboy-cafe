@@ -1,9 +1,9 @@
-﻿/* Filename: Entree.cs
- * Author: Jack Walter
- */
+﻿/* Author: Jack Walter
+ * Class Name: Entree.cs
+ * Purpose: Base class representing an entree
+*/
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

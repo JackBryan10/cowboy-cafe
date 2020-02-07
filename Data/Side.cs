@@ -1,6 +1,9 @@
-﻿using System;
+﻿/* Author: Nathan Bean 
+ * Class Name: Side.cs
+ * Purpose: A Base class representing a side
+*/
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

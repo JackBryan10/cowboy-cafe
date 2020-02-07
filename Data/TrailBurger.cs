@@ -1,10 +1,9 @@
-﻿/* Filename: TrailBurger.cs
- * Author: Jack Walter
- */
-
+﻿/* Author: Jack Walter
+ * Class Name: TrailBurger.cs
+ * Purpose: A class representing the Trail Burger entree
+*/
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

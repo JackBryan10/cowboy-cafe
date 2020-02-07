@@ -1,9 +1,9 @@
-﻿/* Filename: CowpokeChili.cs
- * Author: Jack Walter
- */
+﻿/* Author: Jack Walter
+ * Class Name: ChiliCheeseFries.cs
+ * Purpose: A class representing the Chili Cheese Fries side
+*/
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

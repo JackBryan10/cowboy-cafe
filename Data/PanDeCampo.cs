@@ -1,9 +1,9 @@
-﻿/* Filename: PanDeCampo.cs
- * Author: Jack Walter
- */
+﻿/* Author: Jack Walter
+ * Class Name: PanDeCampo.cs
+ * Purpose: A class representing the Pan de Campo side
+*/
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

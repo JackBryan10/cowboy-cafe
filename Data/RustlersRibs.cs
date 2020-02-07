@@ -1,6 +1,7 @@
-﻿/* Filename: RustersRibs.cs
- * Author: Jack Walter
- */
+﻿/* Author: Jack Walter
+ * Class Name: RustlersRibs.cs
+ * Purpose: A class representing the Rustler's Ribs entree
+*/
 using System;
 using System.Collections.Generic;
 

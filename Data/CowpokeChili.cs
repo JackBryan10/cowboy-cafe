@@ -1,6 +1,8 @@
-﻿/* Filename: CowpokeChili.cs
- * Author: *previously provided*
- */
+﻿/* Author: Nathan Bean
+ * Edited by: Jack Walter
+ * Class Name: CowpokeChili.cs
+ * Purpose: A class representing the Cowpoke Chili entree
+*/
 using System;
 using System.Collections.Generic;
 

@@ -1,7 +1,7 @@
-﻿/* Filename: TexasTripleBurger.cs
- * Author: Jack Walter
- */
-
+﻿/* Author: Jack Walter
+ * Class Name: TexasTripleBurger.cs
+ * Purpose: A class representing a Texas Triple Burger entree
+*/
 using System;
 using System.Collections.Generic;
 

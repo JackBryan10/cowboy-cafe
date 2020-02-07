@@ -1,6 +1,7 @@
-﻿/* Filename: CowpokeChili.cs
- * Author: Jack Walter
- */
+﻿/* Author: Jack Walter
+ * Class Name: AngryChicken.cs
+ * Purpose: A class representing an Angry Chicken entree
+*/
 using System;
 using System.Collections.Generic;
 

@@ -1,9 +1,9 @@
-﻿/* Filename: BakedBeans.cs
- * Author: Jack Walter
- */
+﻿/* Author: Jack Walter
+ * Class Name: BakedBeans.cs
+ * Purpose: A class representing a Baked Beans side
+*/
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
