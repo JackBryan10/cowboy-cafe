@@ -24,7 +24,7 @@ namespace CowboyCafe.Data
 
         /// <summary>
         /// Gets the special instuctions for the entree
-        /// </summary>
+        /// </summary> 
         public virtual List<string> SpecialInstructions { get; set; }
     }
 }
