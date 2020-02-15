@@ -1,4 +1,5 @@
 ﻿/* Author: Nathan Bean 
+ * Revised by: Jack Walter
  * Class Name: Side.cs
  * Purpose: A Base class representing a side
 */
@@ -15,7 +16,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets the size of the side
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size { get; set; } = Size.Small;
 
         /// <summary>
         /// Gets the price of the side
