@@ -19,14 +19,34 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel>
-            <TextBlock TextAlignment="Center">Entrees</TextBlock>
-            <Button Height="50">AngryChickenButton</Button>
-            <Button>CowpokeChili</Button>
+        <StackPanel Grid.Column="0">
+            <TextBlock TextAlignment="Center" Background="Azure">Entrees</TextBlock>
+            <Button Name ="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
+            <Button Name ="CowpokeChiliButton" Click="CowpokeChiliButton_Click">Cowpoke Chili</Button>
+            <Button Name ="DakotaDoubleBurgerButton" Click="DakotaDoubleBurgerButton_Click">Dakota Double Burger</Button>
+            <Button Name ="PecosPulledPorkButton" Click="PecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
+            <Button Name ="RustlersRibsButton" Click="RustlersRibsButton_Click">Rustler's Ribs</Button>
+            <Button Name ="TrailBurgerButton" Click="TrailBurgerButton_Click">Trail Burger</Button>
+            <Button Name ="TexasTripleBurgerButton" Click="TexasTripleBurgerButton_Click">Texas Triple Burger</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center">Side</TextBlock>
-            </StackPanel>
+            <TextBlock TextAlignment="Center" Background="Azure">Side</TextBlock>
+            <Button Name ="BakedBeansButton" Click="BakedBeansButton_Click">Baked Beans</Button>
+            <Button Name ="ChiliCheeseFriesButton" Click="ChiliCheeseFriesButton_Click">Chili Cheese Fries</Button>
+            <Button Name ="CornDodgersButton" Click="CornDodgersButton_Click">Corn Dodgers</Button>
+            <Button Name ="PanDeCampoButton" Click="PanDeCampoButton_Click">Pan De Campo</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment="Center" Background="Azure">Drink</TextBlock>
+        </StackPanel>
+
+        
+        <StackPanel Grid.Column="3">
+            <TextBlock TextAlignment="Center" Background="Azure">Order</TextBlock>
+            <ListBox Name ="OrderList" Height="433"/>
+        </StackPanel>
+
     </Grid>
 </UserControl>
