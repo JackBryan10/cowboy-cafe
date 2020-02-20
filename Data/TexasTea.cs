@@ -4,6 +4,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -80,6 +81,34 @@ namespace CowboyCafe.Data
 
                 return instructions;
             }
+        }
+
+        /// <summary>
+        /// Returns the string representation of the drink
+        /// </summary>
+        /// <returns>The string "*Size* *Decaf* Cowboy Coffee"</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            switch (Size)
+            {
+                case Size.Large:
+                    sb.Append("Large ");
+                    break;
+                case Size.Medium:
+                    sb.Append("Medium ");
+                    break;
+                case Size.Small:
+                    sb.Append("Small ");
+                    break;
+                default:
+                    throw new NotImplementedException("Unknown Size");
+            }
+            sb.Append("Texas ");
+            if (Sweet) { sb.Append("Sweet "); }
+            else { sb.Append("Plain "); }
+            sb.Append("Tea");
+            return sb.ToString();
         }
     }
 }

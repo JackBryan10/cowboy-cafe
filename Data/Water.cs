@@ -4,6 +4,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -40,6 +41,25 @@ namespace CowboyCafe.Data
                 if (Lemon) { instructions.Add("Add Lemon"); }
 
                 return instructions;
+            }
+        }
+
+        /// <summary>
+        /// Returns the string representation of the drink
+        /// </summary>
+        /// <returns>The string "*Size* Water"</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Large:
+                    return "Large Water";
+                case Size.Medium:
+                    return "Medium Water";
+                case Size.Small:
+                    return "Small Water";
+                default:
+                    throw new NotImplementedException("Unknown Size");
             }
         }
     }

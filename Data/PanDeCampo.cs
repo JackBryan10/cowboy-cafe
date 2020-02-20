@@ -53,5 +53,24 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of the side
+        /// </summary>
+        /// <returns>The string "*Size* Pan de Campo"</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Large:
+                    return "Large Pan de Campo";
+                case Size.Medium:
+                    return "Medium Pan de Campo";
+                case Size.Small:
+                    return "Small Pan de Campo";
+                default:
+                    throw new NotImplementedException("Unknown Size");
+            }
+        }
     }
 }
