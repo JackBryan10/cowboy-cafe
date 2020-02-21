@@ -4,12 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" d:DesignWidth="800" Height="460">
     <UserControl.Resources>
         <Style TargetType="Button">
-            <Setter Property="Height" Value="62"></Setter>
+            <Setter Property="Height" Value="62" ></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Background" Value="Azure"></Setter>
         </Style>
+        
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -20,7 +22,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment="Center" Background="Azure">Entrees</TextBlock>
+            <TextBlock TextAlignment="Center" Background="Azure" FontSize="20">Entrees</TextBlock>
             <Button Name ="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
             <Button Name ="CowpokeChiliButton" Click="CowpokeChiliButton_Click">Cowpoke Chili</Button>
             <Button Name ="DakotaDoubleBurgerButton" Click="DakotaDoubleBurgerButton_Click">Dakota Double Burger</Button>
@@ -31,7 +33,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center" Background="Azure">Side</TextBlock>
+            <TextBlock TextAlignment="Center" Background="Azure" FontSize="20">Side</TextBlock>
             <Button Name ="BakedBeansButton" Click="BakedBeansButton_Click">Baked Beans</Button>
             <Button Name ="ChiliCheeseFriesButton" Click="ChiliCheeseFriesButton_Click">Chili Cheese Fries</Button>
             <Button Name ="CornDodgersButton" Click="CornDodgersButton_Click">Corn Dodgers</Button>
@@ -39,13 +41,17 @@
         </StackPanel>
 
         <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center" Background="Azure">Drink</TextBlock>
+            <TextBlock TextAlignment="Center" Background="Azure" FontSize="20">Drink</TextBlock>
+            <Button Name ="CowboyCoffeeButton" Click="CowboyCoffeeButton_Click">Cowboy Coffee</Button>
+            <Button Name ="JerkedSodaButton" Click="JerkedSodaButton_Click">Jerked Soda</Button>
+            <Button Name ="TexasTeaButton" Click="TexasTeaButton_Click">Texas Tea</Button>
+            <Button Name ="WaterButton" Click="WaterButton_Click">Water</Button>
         </StackPanel>
 
-        
+
         <StackPanel Grid.Column="3">
-            <TextBlock TextAlignment="Center" Background="Azure">Order</TextBlock>
-            <ListBox Name ="OrderList" Height="433"/>
+            <TextBlock TextAlignment="Center" Background="Azure" FontSize="20">Order</TextBlock>
+            <ListBox Name ="OrderList" Height="433" FontSize="12"/>
         </StackPanel>
 
     </Grid>

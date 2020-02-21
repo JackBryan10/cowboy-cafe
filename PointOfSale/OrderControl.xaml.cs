@@ -32,7 +32,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Event handler for the click event for the Angry Cicken
+        /// Click event handler for the Angry Chicken entree button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -42,7 +42,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Cowboke Chili entree button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -52,7 +52,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Rustler's Ribs entree button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -62,7 +62,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Pecos Pulled Pork entree button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -72,7 +72,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Dakota Double Burger entree button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -82,7 +82,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Trail Burger entree button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -92,7 +92,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Texas Triple Burger entree button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -102,7 +102,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Baked Beans side button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -112,7 +112,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Chili Cheese Fries side button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -122,7 +122,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Corn Dodgers side button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -132,13 +132,53 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Click event handler for the Pan de Campo side button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void PanDeCampoButton_Click(object sender, RoutedEventArgs e)
         {
             OrderList.Items.Add(new PanDeCampo());
+        }
+
+        /// <summary>
+        /// Click event hander for the Cowboy Coffee drink button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new CowboyCoffee());
+        }
+
+        /// <summary>
+        /// Click event handler for the Jerked Soda drink button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void JerkedSodaButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new JerkedSoda());
+        }
+
+        /// <summary>
+        /// Click event handler for the Texas Tea drink button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TexasTeaButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new TexasTea());
+        }
+
+        /// <summary>
+        /// Click event handler for the Water drink button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void WaterButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new Water());
         }
     }
 }
