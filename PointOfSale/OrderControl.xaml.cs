@@ -1,6 +1,6 @@
 ﻿/* Author: Jack Walter
- * Class Name: TexasTea.cs
- * Purpose: A partial class containing the Order Control User Interface
+ * Class Name: OrderControl.xaml.cs
+ * Purpose: A partial class containing the Order Control for Cowboy Cafe
 */
 using System;
 using System.Collections.Generic;
