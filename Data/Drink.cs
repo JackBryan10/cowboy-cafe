@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A Base class representing drink
+    /// A Base class representing a drink
     /// </summary>
     public abstract class Drink
     {
