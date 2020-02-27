@@ -1,6 +1,6 @@
 ﻿/* Author: Jack Walter
  * Class Name: OrderControl.xaml.cs
- * Purpose: A partial class containing the Order Control for Cowboy CafePu
+ * Purpose: A partial class containing the Order Control for Cowboy Cafe Point of Sale
 */
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new AngryChicken());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new AngryChicken());
+                }
+            }
         }
 
         /// <summary>
@@ -48,7 +54,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CowpokeChiliButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new CowpokeChili());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new CowpokeChili());
+                }
+            }
         }
 
         /// <summary>
@@ -58,7 +70,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void RustlersRibsButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new RustlersRibs());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new RustlersRibs());
+                }
+            }
         }
 
         /// <summary>
@@ -68,7 +86,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void PecosPulledPorkButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new PecosPulledPork());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new PecosPulledPork());
+                }
+            }
         }
 
         /// <summary>
@@ -78,7 +102,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void DakotaDoubleBurgerButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new DakotaDoubleBurger());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new DakotaDoubleBurger());
+                }
+            }
         }
 
         /// <summary>
@@ -88,7 +118,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void TrailBurgerButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new TrailBurger());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new TrailBurger());
+                }
+            }
         }
 
         /// <summary>
@@ -98,7 +134,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void TexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new TexasTripleBurger());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new TexasTripleBurger());
+                }
+            }
         }
 
         /// <summary>
@@ -108,7 +150,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void BakedBeansButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new BakedBeans());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new BakedBeans());
+                }
+            }
         }
 
         /// <summary>
@@ -118,7 +166,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ChiliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new ChiliCheeseFries());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new ChiliCheeseFries());
+                }
+            }
         }
 
         /// <summary>
@@ -128,7 +182,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CornDodgersButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new CornDodgers());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new CornDodgers());
+                }
+            }
         }
 
         /// <summary>
@@ -138,7 +198,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void PanDeCampoButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new PanDeCampo());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new PanDeCampo());
+                }
+            }
         }
 
         /// <summary>
@@ -148,7 +214,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new CowboyCoffee());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new CowboyCoffee());
+                }
+            }
         }
 
         /// <summary>
@@ -158,7 +230,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void JerkedSodaButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new JerkedSoda());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new JerkedSoda());
+                }
+            }
         }
 
         /// <summary>
@@ -168,7 +246,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void TexasTeaButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new TexasTea());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new TexasTea());
+                }
+            }
         }
 
         /// <summary>
@@ -178,7 +262,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void WaterButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new Water());
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    data.Add(new Water());
+                }
+            }
         }
     }
 }

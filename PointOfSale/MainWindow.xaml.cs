@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Jack Walter
+ * Class Name: MainWindow.xaml.cs
+ * Purpose: A partial class containing the Main Window for Cowboy Cafe Point of Sale
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
