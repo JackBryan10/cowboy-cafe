@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="Cowboy Cafe Point of Sale" Height="501" Width="800">
-    <Grid Height="465" Background="Lavender">
-        <local:OrderControl/>
+        Title="Cowboy Cafe Point of Sale" Height="576" Width="900">
+    <Grid Height="536" Background="Lavender">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="460"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <local:OrderControl Grid.Row="1"/>
+        <local:OrderSummaryControl Grid.RowSpan="2" Grid.Column="1"/>
+        <Button FontSize="20" Width="200" Height="50" Grid.Column="0" Margin="25,10,475,10">Item Selection</Button>
+        <Button FontSize="20" Width="200" Height="50" Grid.Column="0" Margin="250,10,250,10">Cancel Order</Button>
+        <Button FontSize="20" Width="200" Height="50" Grid.Column="0" Margin="475,10,25,10">Complete Order</Button>
     </Grid>
 </Window>

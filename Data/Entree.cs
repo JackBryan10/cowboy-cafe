@@ -8,9 +8,9 @@ using System.Collections.Generic;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A base class representing an entree
+    /// A base class implementing the IOrderItem interface and representing an entree 
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree: IOrderItem
     {
         /// <summary>
         /// Gets the price of the entree

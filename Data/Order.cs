@@ -12,16 +12,20 @@ namespace CowboyCafe.Data
 
         public double Subtotal => 0;
 
-        public IEnumerable<IOrderItem> Items => throw new NotImplementedException();
+        List<IOrderItem> items = new List<IOrderItem>();
+
+        public IEnumerable<IOrderItem> Items => items.ToArray();
 
         public void Add(IOrderItem item)
         {
-
+            items.Add(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
         }
 
         public void Remove(IOrderItem item)
         {
-
+            items.Remove(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
         }
     }
 }

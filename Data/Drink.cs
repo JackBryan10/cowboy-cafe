@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A Base class representing a drink
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink: IOrderItem
     {
         /// <summary>
         /// Gets the size of the drink
