@@ -1,6 +1,6 @@
 ﻿/* Author: Jack Walter
  * Class Name: Order.cs
- * Purpose: A class 
+ * Purpose: A class representing the Order 
 */
 using System;
 using System.Collections.Generic;
@@ -13,18 +13,13 @@ namespace CowboyCafe.Data
     /// <summary>
     /// 
     /// </summary>
-    public class Order : INotifyPropertyChanged
+    public class Order : INotifyPropertyChanged, IOrderItem
     {
         /// <summary>
         /// 
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public double Subtotal => 0;
-
+        private uint lastOrderNumber;
+        
         /// <summary>
         /// 
         /// </summary>
@@ -33,7 +28,29 @@ namespace CowboyCafe.Data
         /// <summary>
         /// 
         /// </summary>
-        public IEnumerable<IOrderItem> Items => items.ToArray();
+        public IEnumerable<IOrderItem> Items { get { return items.ToArray(); } }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double Subtotal { get; set; }
+        
+        public uint OrderNumber { get { return lastOrderNumber++; } }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        
+        /// <summary>
+        /// Gets the price of 
+        /// </summary>
+        public double Price { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<string> SpecialInstructions { get; set; }
 
         /// <summary>
         /// 
@@ -42,7 +59,11 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item)
         {
             items.Add(item);
+            Subtotal += item.Price;
+            Price = item.Price;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
 
         /// <summary>
@@ -52,7 +73,11 @@ namespace CowboyCafe.Data
         public void Remove(IOrderItem item)
         {
             items.Remove(item);
+            Subtotal -= item.Price;
+            Price -= item.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
     }
 }
