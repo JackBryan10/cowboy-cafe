@@ -5,6 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" Height="532" Width="300">
+    
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="LightBlueGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="SkyBlue" Offset="0"/>
+            <GradientStop Color="Azure" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="225"/>
@@ -17,9 +25,9 @@
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.ColumnSpan="2" Grid.RowSpan="1" TextAlignment="Left" FontSize="20" Background="SkyBlue" Text="{Binding Path=OrderNumber, StringFormat=d}"></TextBlock>
-        <ListBox ItemsSource="{Binding Path=Items}" FontSize="14" Background="LightBlue" Grid.Row="1"/>
-        <ListBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Path=Price}"/>
+        <TextBlock Grid.ColumnSpan="2" Grid.RowSpan="1" TextAlignment="Left" FontSize="20" Background="DodgerBlue" Text="{Binding Path=OrderNumber, StringFormat=d}"></TextBlock>
+        <ListBox ItemsSource="{Binding Path=Items}" FontSize="14" Background="{StaticResource LightBlueGradient}" Grid.Row="1"/>
+        <ListBox Grid.Row="1" Grid.Column="1" FontSize="20" Background="SkyBlue" ItemsSource="{Binding Path=Prices, StringFormat=c}"/>
         <TextBox Grid.Row="3" FontSize="20" Text="Subtotal"/>
         <TextBox Grid.Row="2" Grid.Column="3" FontSize="20" Text="{Binding Path=Subtotal, StringFormat=c}"/>
     </Grid>

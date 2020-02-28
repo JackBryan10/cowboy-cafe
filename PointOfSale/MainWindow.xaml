@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="Cowboy Cafe Point of Sale" Height="576" Width="1000">
+        Title="Cowboy Cafe Point of Sale" Height="576" Width="1020">
     <Grid Height="536" Background="Lavender">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
@@ -13,14 +13,15 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="4"></ColumnDefinition>
+            <ColumnDefinition Width="79*"/>
             <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <local:OrderControl Grid.Row="1"/>
-        <local:OrderSummaryControl Grid.RowSpan="2" Grid.Column="1"/>
-        <Button FontSize="20" Width="200" Height="50" Grid.Column="0" Margin="25,10,475,10" Click="ItemSelectionButton_Click">Item Selection</Button>
-        <Button FontSize="20" Width="200" Height="50" Grid.Column="0" Margin="250,10,250,10" Click="CancelOrderButton_Click">Cancel Order</Button>
-        <Button FontSize="20" Width="200" Height="50" Grid.Column="0" Margin="475,10,25,10" Click="CompleteOrderButton_Click">Complete Order</Button>
+        <local:MenuItemSelectionControl Grid.Row="1" Grid.ColumnSpan="2"/>
+        <local:OrderSummaryControl Grid.RowSpan="2" Grid.Column="2" Margin="0,4,0,4"/>
+        <Button Background="LightYellow" FontSize="20" Grid.Column="1" Margin="35,15,490,0" Click="ItemSelectionButton_Click" Height="50" VerticalAlignment="Top">Item Selection</Button>
+        <Button Background="LightYellow" FontSize="20" Grid.Column="1" Margin="266,0,266,15" Click="CancelOrderButton_Click" Height="50" VerticalAlignment="Bottom">Cancel Order</Button>
+        <Button Background="LightYellow" FontSize="20" Grid.Column="1" Margin="490,15,35,0" Click="CompleteOrderButton_Click" Height="50" VerticalAlignment="Top">Complete Order</Button>
     </Grid>
 </Window>
