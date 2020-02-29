@@ -270,6 +270,6 @@ namespace PointOfSale
                     }
                 }
             }
-        }
     }
+}
 

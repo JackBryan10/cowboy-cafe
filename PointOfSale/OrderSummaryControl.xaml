@@ -27,7 +27,7 @@
 
         <TextBlock Grid.ColumnSpan="2" Grid.RowSpan="1" TextAlignment="Left" FontSize="20" Background="DodgerBlue" Text="{Binding Path=OrderNumber, StringFormat=d}"></TextBlock>
         <ListBox ItemsSource="{Binding Path=Items}" FontSize="14" Background="{StaticResource LightBlueGradient}" Grid.Row="1"/>
-        <ListBox Grid.Row="1" Grid.Column="1" FontSize="20" Background="SkyBlue" ItemsSource="{Binding Path=Prices, StringFormat=c}"/>
+        <ListBox Grid.Row="1" Grid.Column="1" FontSize="14" Background="SkyBlue" ItemsSource="{Binding Path=Price}"/>
         <TextBox Grid.Row="3" FontSize="20" Text="Subtotal"/>
         <TextBox Grid.Row="2" Grid.Column="3" FontSize="20" Text="{Binding Path=Subtotal, StringFormat=c}"/>
     </Grid>

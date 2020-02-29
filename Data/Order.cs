@@ -42,9 +42,10 @@ namespace CowboyCafe.Data
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public IEnumerable<double> Prices { get { return prices.ToArray(); } }
+        public IEnumerable<string> Price { get { return prices.ToArray(); } }
         
-        private List<double> prices;
+        List<string> prices = new List<string>();
+        
         /// <summary>
         /// 
         /// </summary>
@@ -53,10 +54,10 @@ namespace CowboyCafe.Data
         {
             items.Add(item);
             Subtotal += item.Price;
-            prices.Add(item.Price);
+            prices.Add(String.Format("${0:0.00}", item.Price));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
 
         /// <summary>
@@ -67,10 +68,10 @@ namespace CowboyCafe.Data
         {
             items.Remove(item);
             Subtotal -= item.Price;
-            
+            prices.Remove(String.Format("${0:0.00}", item.Price));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
     }
 }
