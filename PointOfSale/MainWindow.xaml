@@ -9,7 +9,7 @@
     <Grid Height="536" Background="Lavender">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
-            <RowDefinition Height="460"></RowDefinition>
+            <RowDefinition Height="458"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
