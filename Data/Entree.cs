@@ -1,6 +1,6 @@
 ﻿/* Author: Jack Walter
  * Class Name: Entree.cs
- * Purpose: A Base class implementing the IOrderItem interface and representing an entree
+ * Purpose: A Base class that represents an entree
 */
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A Base class implementing the IOrderItem interface and representing an entree 
+    /// A Base class that represents an entree 
     /// </summary>
     public abstract class Entree: IOrderItem
     {
