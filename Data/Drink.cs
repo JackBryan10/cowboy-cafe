@@ -1,6 +1,6 @@
 ﻿/* Author: Jack Walter
  * Class Name: Drink.cs
- * Purpose: A Base class representing drink
+ * Purpose: A Base class implementing the IOrderItem interface and representing a drink
 */
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A Base class representing a drink
+    /// A Base class implementing the IOrderItem interface and representing a drink
     /// </summary>
     public abstract class Drink: IOrderItem
     {

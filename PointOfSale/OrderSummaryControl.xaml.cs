@@ -1,4 +1,7 @@
-﻿
+﻿/* Author: Jack Walter
+ * Class Name: OrderSummaryControl.xaml.cs
+ * Purpose: A partial class containing the OrderSummaryControl for Cowboy Cafe Point of Sale
+*/
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderSummaryControl : UserControl
     {
+        /// <summary>
+        /// Constructor for the OrderSummaryControl class
+        /// </summary>
         public OrderSummaryControl()
         {
             InitializeComponent();
