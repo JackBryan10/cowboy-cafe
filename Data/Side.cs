@@ -11,7 +11,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A base class representing a side
     /// </summary>
-    public abstract class Side: IOrderItem
+    public abstract class Side : IOrderItem
     {
         /// <summary>
         /// Gets the size of the side
@@ -31,6 +31,6 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Throws NotImplementedException because sides have no Special Instructions
         /// </summary>
-        public virtual List<string> SpecialInstructions => throw new NotImplementedException("Sides have no Special Instructions.");
+        public virtual List<string> SpecialInstructions { get; }
     }
 }
