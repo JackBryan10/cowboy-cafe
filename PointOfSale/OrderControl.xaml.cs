@@ -36,6 +36,36 @@ namespace PointOfSale
             Container.Child = new MenuItemSelectionControl();
         }
 
+        /// <summary>
+        /// Click event handler for the Cancel Order button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Order();
+        }
+
+        /// <summary>
+        /// Click event handler for the Complete Order button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Order();
+        }
+
+        /// <summary>
+        /// Click event handler for the Item Selection button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
+        {
+            SwapScreen(new MenuItemSelectionControl());
+        }
+
         public void SwapScreen(FrameworkElement element)
         {
             Container.Child = element;

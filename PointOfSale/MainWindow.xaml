@@ -7,21 +7,13 @@
         mc:Ignorable="d"
         Title="Cowboy Cafe Point of Sale" Height="580" Width="1020">
     <Grid Height="536" Background="Lavender">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="78"></RowDefinition>
-            <RowDefinition Height="458"></RowDefinition>
-        </Grid.RowDefinitions>
-
+       
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4"></ColumnDefinition>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="79*"/>
-            <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <local:OrderControl Grid.Row="1" Grid.ColumnSpan="2"/>
-        <local:OrderSummaryControl Grid.RowSpan="2" Grid.Column="2" Margin="0,0,0,4"/>
-        <Button Background="LightYellow" FontSize="20" Grid.Column="1" Margin="35,0,490,0" Click="ItemSelectionButton_Click" Height="50" VerticalAlignment="Center">Item Selection</Button>
-        <Button Background="LightYellow" FontSize="20" Grid.Column="1" Margin="266,0,266,0" Click="CancelOrderButton_Click" Height="50" VerticalAlignment="Center">Cancel Order</Button>
-        <Button Background="LightYellow" FontSize="20" Grid.Column="1" Margin="490,0,35,0" Click="CompleteOrderButton_Click" Height="50" VerticalAlignment="Center">Complete Order</Button>
+        <local:OrderControl Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        
     </Grid>
 </Window>

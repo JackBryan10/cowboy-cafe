@@ -22,5 +22,6 @@ namespace PointOfSale.Customization_Screens
         {
             InitializeComponent();
         }
+       
     }
 }

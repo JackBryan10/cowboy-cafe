@@ -4,14 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" d:DesignWidth="800" Height="460">
+             mc:Ignorable="d" d:DesignWidth="1080" Height="536">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="78"></RowDefinition>
+            <RowDefinition Height="458"></RowDefinition>
+        </Grid.RowDefinitions>
 
         <Border Name="Container" Grid.Row="1">
             <local:MenuItemSelectionControl></local:MenuItemSelectionControl>
         </Border>
+
+        <local:OrderSummaryControl Grid.RowSpan="2" Grid.Column="1"/>
+
+        <Button Background="LightYellow" FontSize="20" Margin="10,0,550,0" Click="ItemSelectionButton_Click" Height="50" VerticalAlignment="Center">Item Selection</Button>
+        <Button Background="LightYellow" FontSize="20" Margin="287,0,287,0" Click="CancelOrderButton_Click" Height="50" VerticalAlignment="Center">Cancel Order</Button>
+        <Button Background="LightYellow" FontSize="20" Margin="550,0,10,0" Click="CompleteOrderButton_Click" Height="50" VerticalAlignment="Center">Complete Order</Button>
     </Grid>
+
+
 </UserControl>

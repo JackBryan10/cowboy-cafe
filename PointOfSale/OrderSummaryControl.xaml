@@ -31,17 +31,21 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="225"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding Path=Items}" Grid.Row="1" FontSize="14"/>
-                        <ListView ItemsSource="{Binding Path=SpecialInstructions}" Background="LightBlue" Grid.Row="1"/>
-                        <TextBlock Grid.Row="1" Grid.Column="2" FontSize="14" Background="SkyBlue" Text="{Binding Path=Price, StringFormat=c}"/>
+                        
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding}" FontSize="14"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" FontSize="14" Text="{Binding Path=Price, StringFormat=c}"/>
+                        </Grid>
+                        
+                        <ListView Grid.Row="1" ItemsSource="{Binding Path=SpecialInstructions}" Background="LightSkyBlue"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -50,4 +54,5 @@
         <TextBox Grid.Row="3" FontSize="20" Text="  Subtotal"/>
         <TextBox Grid.Row="2" Grid.Column="3" FontSize="20" Text="{Binding Path=Subtotal, StringFormat=c}"/>
     </Grid>
+    
 </UserControl>
