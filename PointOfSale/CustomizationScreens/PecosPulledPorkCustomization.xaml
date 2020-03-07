@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="PointOfSale.Customization_Screens.CowpokeChiliCustomization"
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.PecosPulledPorkCustomization"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PointOfSale.Customization_Screens"
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="600">
     <UserControl.Resources>
@@ -14,27 +14,17 @@
     </UserControl.Resources>
 
     <StackPanel Background="{StaticResource OrangeYellowGradient}">
-        <TextBlock FontSize="40" Text=" Cowpoke Chili Customization"></TextBlock>
+        <TextBlock FontSize="40" Text=" Pecos Pulled Pork Customization"></TextBlock>
 
         <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
             <TextBlock Text=""></TextBlock>
-            <CheckBox IsChecked="{Binding Cheese}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Cheese" FontSize="20"/>
+            <CheckBox IsChecked="{Binding Bread}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Bread" FontSize="20"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding SourCream}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Sour Cream" FontSize="20"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Path=GreenOnions}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Green Onions" FontSize="20"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Path=TortillaStrips}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Tortilla Strips" FontSize="20"/>
+            <CheckBox IsChecked="{Binding Pickle}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Pickle" FontSize="20"/>
         </StackPanel>
 
     </StackPanel>

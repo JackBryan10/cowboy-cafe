@@ -19,6 +19,8 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         private bool bread = true;
+        private bool pickle = true;
+
         /// <summary>
         /// If the sandwich has bread or not
         /// </summary>
@@ -33,7 +35,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        private bool pickle = true;
         /// <summary>
         /// If the sandwich has pickles or not
         /// </summary>
@@ -51,18 +52,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the sandwich
         /// </summary>
-        public override double Price
-        {
-            get { return 5.99; }
-        }
+        public override double Price { get; } = 5.99;
 
         /// <summary>
         /// The calories of the sandwich
         /// </summary>
-        public override uint Calories
-        {
-            get { return 190; }
-        }
+        public override uint Calories { get; } = 190;
 
         /// <summary>
         /// Special instructions for the preparation of the sandwich

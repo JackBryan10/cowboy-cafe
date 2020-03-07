@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.CustomizationScreens.AngryChickenCustomization"
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.RustlersRibsCustomization"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,18 +14,6 @@
     </UserControl.Resources>
 
     <StackPanel Background="{StaticResource OrangeYellowGradient}">
-        <TextBlock FontSize="40" Text=" Angry Chicken Customization"></TextBlock>
-
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <TextBlock Text=""></TextBlock>
-            <CheckBox IsChecked="{Binding Bread}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Bread" FontSize="20"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Pickle}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Pickle" FontSize="20"/>
-        </StackPanel>
-
+        <TextBlock FontSize="40" Text=" Rustler's Ribs Customization"></TextBlock>
     </StackPanel>
 </UserControl>

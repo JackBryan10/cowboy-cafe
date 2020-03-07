@@ -4,14 +4,20 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing the Pecos Pulled Pork entree
     /// </summary>
-    public class PecosPulledPork: Entree
+    public class PecosPulledPork: Entree, INotifyPropertyChanged
     {
+        /// <summary>
+        /// PropertyChangedEventHandler to notify that a property has been changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private bool bread = true;
         private bool pickle = true;
 
@@ -21,7 +27,12 @@ namespace CowboyCafe.Data
         public bool Bread 
         { 
             get { return bread; } 
-            set { bread = value; } 
+            set 
+            { 
+                bread = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            } 
         }
 
         /// <summary>
@@ -30,18 +41,23 @@ namespace CowboyCafe.Data
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = value; }
+            set 
+            { 
+                pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         /// <summary>
         /// The calories of the sandwich
         /// </summary>
-        public override uint Calories { get { return 528; } }
+        public override uint Calories { get; } = 528;
 
         /// <summary>
         /// The price of the sandwich
         /// </summary>
-        public override double Price { get { return 5.88; } }
+        public override double Price { get; } = 5.88;
 
         /// <summary>
         /// Special instructions for the preparation of the sandwich

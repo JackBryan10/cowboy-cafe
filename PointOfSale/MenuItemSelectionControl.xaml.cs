@@ -106,11 +106,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void PecosPulledPorkButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new PecosPulledPork());
+                    var item = new PecosPulledPork();
+                    var screen = new PecosPulledPorkCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -122,11 +128,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void DakotaDoubleBurgerButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new DakotaDoubleBurger());
+                    var item = new DakotaDoubleBurger();
+                    var screen = new DakotaDoubleBurgerCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -138,11 +150,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void TrailBurgerButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new TrailBurger());
+                    var item = new TrailBurger();
+                    var screen = new TrailBurgerCustomizations();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -154,11 +172,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void TexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new TexasTripleBurger());
+                    var item = new TexasTripleBurger();
+                    var screen = new TexasTripleBurgerCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }

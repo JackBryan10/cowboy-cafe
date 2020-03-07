@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.TexasTripleBurgerCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="OrangeYellowGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="Orange" Offset="0"/>
+            <GradientStop Color="Yellow" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+
+    <StackPanel Background="{StaticResource OrangeYellowGradient}">
+        <TextBlock FontSize="40" Text=" Texas Triple Burger Customization"></TextBlock>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <CheckBox IsChecked="{Binding Bun}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Bun" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <CheckBox IsChecked="{Binding Ketchup}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Ketchup" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <CheckBox IsChecked="{Binding Mustard}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Mustard" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <CheckBox IsChecked="{Binding Pickle}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Pickle" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <CheckBox IsChecked="{Binding Cheese}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Cheese" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <TextBlock Text=""></TextBlock>
+            <CheckBox IsChecked="{Binding Tomato}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Tomato" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <CheckBox IsChecked="{Binding Lettuce}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Lettuce" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <CheckBox IsChecked="{Binding Mayo}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Mayo" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <CheckBox IsChecked="{Binding Bacon}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Bacon" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <CheckBox IsChecked="{Binding Egg}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Egg" FontSize="20"/>
+        </StackPanel>
+        
+    </StackPanel>
+</UserControl>
