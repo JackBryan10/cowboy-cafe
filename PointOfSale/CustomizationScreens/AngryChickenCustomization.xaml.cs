@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PointOfSale.Customization_Screens
+namespace PointOfSale.CustomizationScreens
 {
     /// <summary>
-    /// Interaction logic for CowpokeChiliCustomization.xaml
+    /// Interaction logic for AngryChickenCustomization.xaml
     /// </summary>
-    public partial class CowpokeChiliCustomization : UserControl
+    public partial class AngryChickenCustomization : UserControl
     {
-        public CowpokeChiliCustomization()
+        public AngryChickenCustomization()
         {
             InitializeComponent();
         }

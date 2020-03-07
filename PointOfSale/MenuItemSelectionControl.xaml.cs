@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using PointOfSale.CustomizationScreens;
 using PointOfSale.Customization_Screens;
 
 namespace PointOfSale
@@ -39,11 +40,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new AngryChicken());
+                    var item = new AngryChicken();
+                    var screen = new AngryChickenCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -77,11 +84,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void RustlersRibsButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new RustlersRibs());
+                    var item = new RustlersRibs();
+                    var screen = new RustlersRibsCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }

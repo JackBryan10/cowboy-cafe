@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
     public class CowpokeChili: Entree, INotifyPropertyChanged
     {
         /// <summary>
-        /// 
+        /// PropertyChangedEventHandler to notify that a property has been changed
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 

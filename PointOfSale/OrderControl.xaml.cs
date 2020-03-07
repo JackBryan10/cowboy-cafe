@@ -31,11 +31,6 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        public void OnMenuItemSelectionButtonClicked(object sender, RoutedEventArgs e)
-        {
-            Container.Child = new MenuItemSelectionControl();
-        }
-
         /// <summary>
         /// Click event handler for the Cancel Order button
         /// </summary>
@@ -66,6 +61,10 @@ namespace PointOfSale
             SwapScreen(new MenuItemSelectionControl());
         }
 
+        /// <summary>
+        /// Swaps the Windows 
+        /// </summary>
+        /// <param name="element"></param>
         public void SwapScreen(FrameworkElement element)
         {
             Container.Child = element;

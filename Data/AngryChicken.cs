@@ -4,32 +4,49 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing an Angry Chicken entree
     /// </summary>
-    public class AngryChicken: Entree
+    public class AngryChicken: Entree, INotifyPropertyChanged
     {
         /// <summary>
-        /// Variable to store the decision of bread or not
+        /// PropertyChangedEventHandler to notify that a property has been changed
         /// </summary>
-        private bool bread = true;
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        private bool bread = true;
         /// <summary>
         /// If the sandwich has bread or not
         /// </summary>
         public bool Bread
         {
             get { return bread; }
-            set { bread = value; }
+            set
+            {
+                bread = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
+        private bool pickle = true;
         /// <summary>
         /// If the sandwich has pickles or not
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            set 
+            {
+                pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// The price of the sandwich
@@ -56,7 +73,7 @@ namespace CowboyCafe.Data
             {
                 List<string> instructions = new List<string>();
 
-                if (!bread) { instructions.Add("hold bread"); }
+                if (!Bread) { instructions.Add("hold bread"); }
                 if (!Pickle) { instructions.Add("hold pickle"); }
 
                 return instructions;

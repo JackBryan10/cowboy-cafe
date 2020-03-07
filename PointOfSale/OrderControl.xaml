@@ -4,11 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" d:DesignWidth="1080" Height="536">
+             mc:Ignorable="d" d:DesignWidth="1150" Height="538">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="800"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="750"/>
+            <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="78"></RowDefinition>
@@ -19,11 +19,11 @@
             <local:MenuItemSelectionControl></local:MenuItemSelectionControl>
         </Border>
 
-        <local:OrderSummaryControl Grid.RowSpan="2" Grid.Column="1"/>
+        <local:OrderSummaryControl Grid.RowSpan="2" Margin="0,2,0,2" Grid.Column="1"/>
 
-        <Button Background="LightYellow" FontSize="20" Margin="10,0,550,0" Click="ItemSelectionButton_Click" Height="50" VerticalAlignment="Center">Item Selection</Button>
-        <Button Background="LightYellow" FontSize="20" Margin="287,0,287,0" Click="CancelOrderButton_Click" Height="50" VerticalAlignment="Center">Cancel Order</Button>
-        <Button Background="LightYellow" FontSize="20" Margin="550,0,10,0" Click="CompleteOrderButton_Click" Height="50" VerticalAlignment="Center">Complete Order</Button>
+        <Button Background="LightYellow" FontSize="20" Margin="33,0,528,0" Click="ItemSelectionButton_Click" Height="50" VerticalAlignment="Center">Item Selection</Button>
+        <Button Background="LightYellow" FontSize="20" Margin="271,0,271,0" Click="CancelOrderButton_Click" Height="50" VerticalAlignment="Center">Cancel Order</Button>
+        <Button Background="LightYellow" FontSize="20" Margin="528,0,33,0" Click="CompleteOrderButton_Click" Height="50" VerticalAlignment="Center">Complete Order</Button>
     </Grid>
 
 
