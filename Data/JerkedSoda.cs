@@ -5,14 +5,22 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing the Jerked Soda drink
     /// </summary>
-    public class JerkedSoda: Drink
+    public class JerkedSoda: Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// PropertyChangedEventHandler to notify that a property has been changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private bool ice = true;
+
         /// <summary>
         /// The price of the Jerked Soda drink
         /// </summary>
@@ -61,6 +69,20 @@ namespace CowboyCafe.Data
         public SodaFlavor Flavor { get; set; }
 
         /// <summary>
+        /// Gets and sets whether the Jerked Soda drink has Ice or not
+        /// </summary>
+        public override bool Ice 
+        { 
+            get { return ice; }
+            set 
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        /// <summary>
         /// The special instructions for preparing the Jerked Soda drink
         /// </summary>
         public override List<string> SpecialInstructions
@@ -78,7 +100,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Returns the string representation of the drink
         /// </summary>
-        /// <returns>The string "*Size* *Flavor* Cowboy Coffee"</returns>
+        /// <returns>The string "*Size* *Flavor* Jerked Soda"</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

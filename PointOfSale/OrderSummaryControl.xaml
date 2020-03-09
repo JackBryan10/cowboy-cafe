@@ -46,7 +46,7 @@
                             <TextBlock Grid.Row="0" Grid.Column="1" FontSize="14" Text="{Binding Path=Price, StringFormat=c}"/>
                         </Grid>
                         
-                        <ListView Grid.Row="1" ItemsSource="{Binding Path=SpecialInstructions}" Background="LightSkyBlue"/>
+                        <ListView Grid.Row="1" ItemsSource="{Binding Path=SpecialInstructions}" Background="SkyBlue"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

@@ -194,11 +194,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void BakedBeansButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new BakedBeans());
+                    var item = new BakedBeans();
+                    var screen = new BakedBeansCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -210,11 +216,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ChiliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new ChiliCheeseFries());
+                    var item = new ChiliCheeseFries();
+                    var screen = new ChiliCheeseFriesCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -226,11 +238,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CornDodgersButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new CornDodgers());
+                    var item = new CornDodgers();
+                    var screen = new CornDodgersCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -242,11 +260,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void PanDeCampoButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new PanDeCampo());
+                    var item = new PanDeCampo();
+                    var screen = new PanDeCampoCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -258,11 +282,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new CowboyCoffee());
+                    var item = new CowboyCoffee();
+                    var screen = new CowboyCoffeeCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -274,11 +304,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void JerkedSodaButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new JerkedSoda());
+                    var item = new JerkedSoda();
+                    var screen = new JerkedSodaCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }

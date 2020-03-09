@@ -29,8 +29,8 @@ namespace CowboyCafe.Data
         public abstract uint Calories { get; }
 
         /// <summary>
-        /// Throws NotImplementedException because sides have no Special Instructions
-        /// </summary>
+        /// Sides have no Special Instructions, thus list is empty
+        /// </summary> 
         public virtual List<string> SpecialInstructions { get; }
     }
 }

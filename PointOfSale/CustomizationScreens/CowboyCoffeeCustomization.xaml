@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.CowboyCoffeeCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="OrangeYellowGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="Orange" Offset="0"/>
+            <GradientStop Color="Yellow" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+
+    <StackPanel Background="{StaticResource OrangeYellowGradient}">
+        <TextBlock FontSize="40" Text=" Baked Beans Customization"></TextBlock>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <TextBlock Text=""></TextBlock>
+            <CheckBox IsChecked="{Binding RoomForCream}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Room for Cream" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <TextBlock Text=""></TextBlock>
+            <CheckBox IsChecked="{Binding Ice}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Ice" FontSize="20"/>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>
