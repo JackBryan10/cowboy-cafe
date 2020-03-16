@@ -5,14 +5,23 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing the Texas Tea drink
     /// </summary>
-    public class TexasTea: Drink
+    public class TexasTea: Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// PropertyChangedEventHandler to notify that a property has been changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private bool lemon = false;
+        private bool ice = true;
+        
         /// <summary>
         /// The price of the Texas Tea drink
         /// </summary>
@@ -58,14 +67,37 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Whether the Texas Tea drink is Sweet or not
+        /// Whether the Texas Tea drink is sweet or not
         /// </summary>
         public bool Sweet { get; set; } = true;
 
         /// <summary>
+        /// Whether the Water drink is served with Ice or not
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        /// <summary>
         /// Whether the Texas Tea drink is served with Lemon or not
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// The special instructions for preparing the Texas Tea drink

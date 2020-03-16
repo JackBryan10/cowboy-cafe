@@ -85,7 +85,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// 
+        /// Is called whenever an item is Added or Removed from the Order.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

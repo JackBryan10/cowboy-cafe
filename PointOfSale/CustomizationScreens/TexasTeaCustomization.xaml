@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.CustomizationScreens.JerkedSodaCustomization"
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.TexasTeaCustomization"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,8 +14,14 @@
     </UserControl.Resources>
 
     <StackPanel Background="{StaticResource OrangeYellowGradient}">
-        <TextBlock FontSize="40" Text=" Jerked Soda Customization"></TextBlock>
+        <TextBlock FontSize="40" Text=" Texas Tea Customization"></TextBlock>
 
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <TextBlock Text=""></TextBlock>
+            <CheckBox IsChecked="{Binding Lemon}" Width="25" Margin="0,8"/>
+            <TextBlock Text="Lemon" FontSize="20"/>
+        </StackPanel>
+        
         <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
             <TextBlock Text=""></TextBlock>
             <CheckBox IsChecked="{Binding Ice}" Width="25" Margin="0,8"/>

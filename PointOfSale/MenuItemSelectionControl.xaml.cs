@@ -326,11 +326,17 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void TexasTeaButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new TexasTea());
+                    var item = new TexasTea();
+                    var screen = new TexasTeaCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
@@ -342,14 +348,19 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void WaterButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
-                    data.Add(new Water());
+                    var item = new Water();
+                    var screen = new WaterCustomization();
+                    screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
     }
 }
-
