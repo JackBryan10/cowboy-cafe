@@ -97,7 +97,6 @@ namespace CowboyCafe.Data
             { 
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal")); 
             }
-            
         }
     }
 }

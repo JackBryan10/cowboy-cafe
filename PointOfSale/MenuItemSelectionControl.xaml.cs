@@ -1,19 +1,9 @@
 ﻿/* Author: Jack Walter
  * Class Name: MenuItemSelectionControl.xaml.cs
- * Purpose: A partial class containing the MenuItemSelectionControl for Cowboy Cafe Point of Sale
+ * Purpose: A partial class containing the MenuItemSelectionControl screen for Cowboy Cafe Point of Sale
 */
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using CowboyCafe.Data;
 using PointOfSale.CustomizationScreens;
 using PointOfSale.Customization_Screens;
@@ -26,7 +16,7 @@ namespace PointOfSale
     public partial class MenuItemSelectionControl : UserControl
     {
         /// <summary>
-        /// Constructor for the MenuItemSelectionControl User Interface
+        /// Constructor for the MenuItemSelectionControl Order Control
         /// </summary>
         public MenuItemSelectionControl()
         {

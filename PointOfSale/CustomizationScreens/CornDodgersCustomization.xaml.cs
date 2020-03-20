@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿/* Author: Jack Walter
+ * Class Name: CornDodgersCustomization.xaml.cs
+ * Purpose: A partial class for the Corn Dodgers Customization screen for Cowboy Cafe Point of Sale
+*/
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PointOfSale.CustomizationScreens
 {
@@ -18,6 +11,9 @@ namespace PointOfSale.CustomizationScreens
     /// </summary>
     public partial class CornDodgersCustomization : UserControl
     {
+        /// <summary>
+        /// Constructor for the CornDodgersCustomization Order Control
+        /// </summary>
         public CornDodgersCustomization()
         {
             InitializeComponent();

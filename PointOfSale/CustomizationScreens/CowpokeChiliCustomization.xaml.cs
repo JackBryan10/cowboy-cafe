@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿/* Author: Jack Walter
+ * Class Name: CowpokeChiliCustomization.xaml.cs
+ * Purpose: A partial class for the Cowpoke Chili Customization screen for Cowboy Cafe Point of Sale
+*/
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PointOfSale.Customization_Screens
 {
@@ -18,6 +11,9 @@ namespace PointOfSale.Customization_Screens
     /// </summary>
     public partial class CowpokeChiliCustomization : UserControl
     {
+        /// <summary>
+        /// Constructor for the CowpokeChiliCustomization Order Control
+        /// </summary>
         public CowpokeChiliCustomization()
         {
             InitializeComponent();
