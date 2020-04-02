@@ -2,7 +2,6 @@
  * Class Name: TexasTripleBurger.cs
  * Purpose: A class representing a Texas Triple Burger entree
 */
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -11,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Texas Triple Burger entree
     /// </summary>
-    public class TexasTripleBurger: Entree, INotifyPropertyChanged
+    public class TexasTripleBurger : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// PropertyChangedEventHandler to notify that a property has been changed
@@ -19,16 +18,6 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         private bool bun = true;
-        private bool ketchup = true;
-        private bool mustard = true;
-        private bool pickle = true;
-        private bool cheese = true;
-        private bool tomato = true;
-        private bool lettuce = true;
-        private bool mayo = true;
-        private bool bacon = true;
-        private bool egg = true;
-
         /// <summary>
         /// If the burger has a bun
         /// </summary>
@@ -37,12 +26,14 @@ namespace CowboyCafe.Data
             get { return bun; }
             set
             {
+                if (bun == value) return;
                 bun = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool ketchup = true;
         /// <summary>
         /// If the burger is topped with ketchup
         /// </summary>
@@ -51,12 +42,14 @@ namespace CowboyCafe.Data
             get { return ketchup; }
             set
             {
+                if (ketchup == value) return;
                 ketchup = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool mustard = true;
         /// <summary>
         /// If the burger is topped with mustard
         /// </summary>
@@ -65,12 +58,14 @@ namespace CowboyCafe.Data
             get { return mustard; }
             set
             {
+                if (mustard == value) return;
                 mustard = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool pickle = true;
         /// <summary>
         /// If the burger is topped with pickle
         /// </summary>
@@ -79,12 +74,14 @@ namespace CowboyCafe.Data
             get { return pickle; }
             set
             {
+                if (pickle == value) return;
                 pickle = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool cheese = true;
         /// <summary>
         /// If the burger is topped with a slice of cheese
         /// </summary>
@@ -93,12 +90,14 @@ namespace CowboyCafe.Data
             get { return cheese; }
             set
             {
+                if (cheese == value) return;
                 cheese = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool tomato = true;
         /// <summary>
         /// If the burger is topped with a slice of tomato
         /// </summary>
@@ -107,12 +106,14 @@ namespace CowboyCafe.Data
             get { return tomato; }
             set
             {
+                if (tomato == value) return;
                 tomato = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool lettuce = true;
         /// <summary>
         /// If the burger is topped with a leaf of lettuce
         /// </summary>
@@ -121,12 +122,14 @@ namespace CowboyCafe.Data
             get { return lettuce; }
             set
             {
+                if (lettuce == value) return;
                 lettuce = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool mayo = true;
         /// <summary>
         /// If the burger is topped with mayo
         /// </summary>
@@ -135,35 +138,39 @@ namespace CowboyCafe.Data
             get { return mayo; }
             set
             {
+                if (lettuce == value) return;
                 mayo = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
-
+        private bool bacon = true;
         /// <summary>
         /// If the burger is topped with bacon
         /// </summary>
         public bool Bacon
         {
             get { return bacon; }
-            set 
+            set
             {
+                if (bacon == value) return;
                 bacon = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bacon"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool egg = true;
         /// <summary>
         /// If the burger is topped with egg
         /// </summary>
         public bool Egg
         {
             get { return egg; }
-            set 
-            { 
+            set
+            {
+                if (egg == value) return;
                 egg = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
@@ -173,7 +180,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the burger
         /// </summary>
-        public override double Price { get;  } = 6.45; 
+        public override double Price { get; } = 6.45;
 
         /// <summary>
         /// The calories of the burger

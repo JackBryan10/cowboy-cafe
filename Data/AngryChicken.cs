@@ -2,7 +2,6 @@
  * Class Name: AngryChicken.cs
  * Purpose: A class representing an Angry Chicken entree
 */
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -19,8 +18,6 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         private bool bread = true;
-        private bool pickle = true;
-
         /// <summary>
         /// If the sandwich has bread or not
         /// </summary>
@@ -29,12 +26,14 @@ namespace CowboyCafe.Data
             get { return bread; }
             set
             {
+                if (bread == value) return;
                 bread = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool pickle = true;
         /// <summary>
         /// If the sandwich has pickles or not
         /// </summary>
@@ -43,6 +42,7 @@ namespace CowboyCafe.Data
             get { return pickle; }
             set 
             {
+                if (pickle == value) return;
                 pickle = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));

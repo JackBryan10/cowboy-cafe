@@ -1,7 +1,4 @@
-﻿/* Author: Jack Walter
- * Class Name: CowboyCoffeeCustomization.xaml.cs
- * Purpose: A partial class for the Cowboy Coffee Customization screen for Cowboy Cafe Point of Sale
-*/
+﻿//Using ideas from Zachery Bruner's model solution for sides
 using System.Windows;
 using System.Windows.Controls;
 using CowboyCafe.Data;
@@ -10,9 +7,9 @@ using Size = CowboyCafe.Data.Size;
 namespace PointOfSale.CustomizationScreens
 {
     /// <summary>
-    /// Interaction logic for CowboyCoffeeCustomization.xaml
+    /// Interaction logic for SideCustomization.xaml
     /// </summary>
-    public partial class CowboyCoffeeCustomization : UserControl
+    public partial class SideCustomization : UserControl
     {
         /// <summary>
         /// Private backing variable for current order
@@ -20,48 +17,46 @@ namespace PointOfSale.CustomizationScreens
         private Order order;
 
         /// <summary>
-        /// Constructor for the CowboyCoffeeCustomization Order Control
+        /// Constructor for the SideCustomization OrderControl
         /// </summary>
-        public CowboyCoffeeCustomization(object dataContext)
+        /// <param name="dataContext"></param>
+        public SideCustomization(object dataContext)
         {
             InitializeComponent();
             order = (Order)dataContext;
         }
 
         /// <summary>
-        /// Event Handler for a click event on the Radio Buttons
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void IsClicked(object sender, RoutedEventArgs e)
+        public void IsClicked(object sender, RoutedEventArgs e) 
         {
-            CowboyCoffee drink = (CowboyCoffee)DataContext;
+            Side side;
+
+            if (DataContext is ChiliCheeseFries)
+                side = (ChiliCheeseFries)DataContext;
+            else if (DataContext is CornDodgers)
+                side = (CornDodgers)DataContext;
+            else if (DataContext is PanDeCampo)
+                side = (PanDeCampo)DataContext;
+            else
+                side = (BakedBeans)DataContext;
 
             switch (((RadioButton)sender).Name)
             {
-                case "ButtonDecaf":
-                    if (drink.Decaf) 
-                    { 
-                        drink.Decaf = false;
-                        ButtonDecaf.IsChecked = false;
-                    }
-                    else 
-                    {
-                        drink.Decaf = true;
-                        ButtonDecaf.IsChecked = true;
-                    }
-                    break;
                 case "ButtonSmall":
-                    drink.Size = Size.Small;
-                    ButtonSizeSwitch(drink.Size);
+                    side.Size = Size.Small;
+                    ButtonSwitch(side.Size);
                     break;
                 case "ButtonMedium":
-                    drink.Size = Size.Medium;
-                    ButtonSizeSwitch(drink.Size);
+                    side.Size = Size.Medium;
+                    ButtonSwitch(side.Size);
                     break;
                 case "ButtonLarge":
-                    drink.Size = Size.Large;
-                    ButtonSizeSwitch(drink.Size);
+                    side.Size = Size.Large;
+                    ButtonSwitch(side.Size);
                     break;
                 default:
                     break;
@@ -70,10 +65,10 @@ namespace PointOfSale.CustomizationScreens
         }
 
         /// <summary>
-        /// Separates the cases of size to the correct button to be selected
+        /// 
         /// </summary>
         /// <param name="size"></param>
-        public void ButtonSizeSwitch(Size size)
+        public void ButtonSwitch(Size size)
         {
             switch (size)
             {

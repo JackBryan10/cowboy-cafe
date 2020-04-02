@@ -16,29 +16,49 @@
     <StackPanel Background="{StaticResource OrangeYellowGradient}">
         <TextBlock FontSize="40" Text=" Trail Burger Customization"></TextBlock>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Bun}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Bun" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Bun}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Bun" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Ketchup}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Ketchup" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Ketchup}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Ketchup" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Mustard}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Mustard" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Mustard}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Mustard" FontSize="25"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Pickle}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Pickle" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Pickle}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Pickle" FontSize="20"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Cheese}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Cheese" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Cheese}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Cheese" FontSize="25"/>
         </StackPanel>
 
     </StackPanel>

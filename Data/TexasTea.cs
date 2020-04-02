@@ -12,21 +12,19 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Texas Tea drink
     /// </summary>
-    public class TexasTea: Drink, INotifyPropertyChanged
+    public class TexasTea : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// PropertyChangedEventHandler to notify that a property has been changed
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public new event PropertyChangedEventHandler PropertyChanged;
 
-        private bool lemon = false;
-        private bool ice = true;
-        
         /// <summary>
         /// The price of the Texas Tea drink
         /// </summary>
-        public override double Price 
-        { get 
+        public override double Price
+        {
+            get
             {
                 switch (Size)
                 {
@@ -39,7 +37,7 @@ namespace CowboyCafe.Data
                     default:
                         throw new NotImplementedException("Unknown Size");
                 }
-            } 
+            }
         }
 
         /// <summary>
@@ -71,6 +69,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Sweet { get; set; } = true;
 
+        private bool ice = true;
         /// <summary>
         /// Whether the Water drink is served with Ice or not
         /// </summary>
@@ -79,12 +78,14 @@ namespace CowboyCafe.Data
             get { return ice; }
             set
             {
+                if (ice == value) return;
                 ice = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool lemon = false;
         /// <summary>
         /// Whether the Texas Tea drink is served with Lemon or not
         /// </summary>
@@ -93,6 +94,7 @@ namespace CowboyCafe.Data
             get { return lemon; }
             set
             {
+                if (lemon == value) return;
                 lemon = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
@@ -122,20 +124,7 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            switch (Size)
-            {
-                case Size.Large:
-                    sb.Append("Large ");
-                    break;
-                case Size.Medium:
-                    sb.Append("Medium ");
-                    break;
-                case Size.Small:
-                    sb.Append("Small ");
-                    break;
-                default:
-                    throw new NotImplementedException("Unknown Size");
-            }
+            sb.Append(Size.ToString() + " ");
             sb.Append("Texas ");
             if (Sweet) { sb.Append("Sweet "); }
             else { sb.Append("Plain "); }

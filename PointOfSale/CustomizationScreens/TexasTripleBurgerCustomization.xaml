@@ -14,58 +14,97 @@
     </UserControl.Resources>
 
     <StackPanel Background="{StaticResource OrangeYellowGradient}">
-        <TextBlock FontSize="40" Text=" Texas Triple Burger Customization"></TextBlock>
+        <TextBlock FontSize="40" Text=" Texas Triple Burger Customization" Margin="0,-3,0,0"></TextBlock>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Bun}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Bun" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Bun}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Bun" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Ketchup}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Ketchup" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Ketchup}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Ketchup" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Mustard}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Mustard" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Mustard}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Mustard" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Pickle}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Pickle" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Pickle}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Pickle" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Cheese}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Cheese" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Cheese}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Cheese" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <TextBlock Text=""></TextBlock>
-            <CheckBox IsChecked="{Binding Tomato}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Tomato" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Tomato}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Tomato" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Lettuce}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Lettuce" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Lettuce}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Lettuce" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Mayo}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Mayo" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Mayo}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Mayo" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Bacon}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Bacon" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Bacon}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Bacon" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Egg}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Egg" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,4,0,0">
+            <CheckBox IsChecked="{Binding Egg}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Egg" FontSize="25"/>
         </StackPanel>
-        
+
     </StackPanel>
 </UserControl>

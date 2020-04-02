@@ -2,7 +2,6 @@
  * Class Name: Entree.cs
  * Purpose: A Base class that represents an entree
 */
-using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

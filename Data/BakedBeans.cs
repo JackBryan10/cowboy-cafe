@@ -3,7 +3,6 @@
  * Purpose: A class representing a Baked Beans side
 */
 using System;
-using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
@@ -60,17 +59,7 @@ namespace CowboyCafe.Data
         /// <returns>The string "*Size* Baked Beans"</returns>
         public override string ToString()
         {
-            switch (Size)
-            {
-                case Size.Large:
-                    return "Large Baked Beans";
-                case Size.Medium:
-                    return "Medium Baked Beans";
-                case Size.Small:
-                    return "Small Baked Beans";
-                default:
-                    throw new NotImplementedException("Unknown Size");
-            }
+            return Size.ToString() + " Baked Beans";
         }
     }
 }

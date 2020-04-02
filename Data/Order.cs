@@ -1,12 +1,9 @@
 ﻿/* Author: Jack Walter
  * Class Name: Order.cs
  * Purpose: A class representing the data stored in an Order 
- * and handles the actions of adding to or removing from the Order.
+ * and handles the actions of adding items, removing items, and updating the Order.
 */
-using System;
 using System.Collections.Generic;
-using System.Text;
-using CowboyCafe.Data;
 using System.ComponentModel;
 
 namespace CowboyCafe.Data
@@ -97,6 +94,21 @@ namespace CowboyCafe.Data
             { 
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal")); 
             }
+        }
+
+        /// <summary>
+        /// Updates all Properties
+        /// </summary>
+        public void PropertiesChanged() 
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special Instructions"));
+            Subtotal = 0;
+            foreach(IOrderItem item in items) 
+            {
+                Subtotal += item.Price;
+            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }
 }

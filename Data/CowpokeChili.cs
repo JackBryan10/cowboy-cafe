@@ -20,10 +20,6 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         private bool cheese = true;
-        private bool sourCream = true;
-        private bool greenOnions = true;
-        private bool tortillaStrips = true;
-
         /// <summary>
         /// If the chili is topped with cheese
         /// </summary>
@@ -38,6 +34,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool sourCream = true;
         /// <summary>
         /// If the chili is topped with sour cream
         /// </summary>
@@ -52,6 +49,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool greenOnions = true;
         /// <summary>
         /// If the chili is topped with green onions
         /// </summary>
@@ -66,6 +64,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool tortillaStrips = true;
         /// <summary>
         /// If the chili is topped with tortilla strips
         /// </summary>

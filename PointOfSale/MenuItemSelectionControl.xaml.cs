@@ -191,9 +191,10 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     var item = new BakedBeans();
-                    var screen = new BakedBeansCustomization();
+                    var screen = new SideCustomization(DataContext);
                     screen.DataContext = item;
                     data.Add(item);
+                    screen.ButtonSwitch(item.Size);
                     orderControl?.SwapScreen(screen);
                 }
             }
@@ -213,9 +214,10 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     var item = new ChiliCheeseFries();
-                    var screen = new ChiliCheeseFriesCustomization();
+                    var screen = new SideCustomization(DataContext);
                     screen.DataContext = item;
                     data.Add(item);
+                    screen.ButtonSwitch(item.Size);
                     orderControl?.SwapScreen(screen);
                 }
             }
@@ -235,9 +237,10 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     var item = new CornDodgers();
-                    var screen = new CornDodgersCustomization();
+                    var screen = new SideCustomization(DataContext);
                     screen.DataContext = item;
                     data.Add(item);
+                    screen.ButtonSwitch(item.Size);
                     orderControl?.SwapScreen(screen);
                 }
             }
@@ -257,9 +260,10 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     var item = new PanDeCampo();
-                    var screen = new PanDeCampoCustomization();
+                    var screen = new SideCustomization(DataContext);
                     screen.DataContext = item;
                     data.Add(item);
+                    screen.ButtonSwitch(item.Size);
                     orderControl?.SwapScreen(screen);
                 }
             }
@@ -279,9 +283,10 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     var item = new CowboyCoffee();
-                    var screen = new CowboyCoffeeCustomization();
+                    var screen = new CowboyCoffeeCustomization(DataContext);
                     screen.DataContext = item;
                     data.Add(item);
+                    screen.ButtonSizeSwitch(item.Size);
                     orderControl?.SwapScreen(screen);
                 }
             }
@@ -301,9 +306,11 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     var item = new JerkedSoda();
-                    var screen = new JerkedSodaCustomization();
+                    var screen = new JerkedSodaCustomization(DataContext);
                     screen.DataContext = item;
                     data.Add(item);
+                    screen.ButtonSizeSwitch(item.Size);
+                    screen.ButtonFlavorSwitch(item.Flavor);
                     orderControl?.SwapScreen(screen);
                 }
             }
@@ -345,9 +352,10 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     var item = new Water();
-                    var screen = new WaterCustomization();
+                    var screen = new WaterCustomization(DataContext);
                     screen.DataContext = item;
                     data.Add(item);
+                    screen.ButtonSizeSwitch(item.Size);
                     orderControl?.SwapScreen(screen);
                 }
             }

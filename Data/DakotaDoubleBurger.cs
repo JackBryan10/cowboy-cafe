@@ -11,7 +11,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Dakota Double Burger entree
     /// </summary>
-    public class DakotaDoubleBurger: Entree, INotifyPropertyChanged
+    public class DakotaDoubleBurger : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// PropertyChangedEventHandler to notify that a property has been changed
@@ -19,14 +19,6 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         private bool bun = true;
-        private bool ketchup = true;
-        private bool mustard = true;
-        private bool pickle = true;
-        private bool cheese = true;
-        private bool tomato = true;
-        private bool lettuce = true;
-        private bool mayo = true;
-
         /// <summary>
         /// If the burger has a bun
         /// </summary>
@@ -41,6 +33,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool ketchup = true;
         /// <summary>
         /// If the burger is topped with ketchup
         /// </summary>
@@ -55,6 +48,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool mustard = true;
         /// <summary>
         /// If the burger is topped with mustard
         /// </summary>
@@ -69,6 +63,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool pickle = true;
         /// <summary>
         /// If the burger is topped with pickle
         /// </summary>
@@ -83,6 +78,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool cheese = true;
         /// <summary>
         /// If the burger is topped with a slice of cheese
         /// </summary>
@@ -97,42 +93,45 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool tomato = true;
         /// <summary>
         /// If the burger is topped with a slice of tomato
         /// </summary>
-        public bool Tomato 
+        public bool Tomato
         {
             get { return tomato; }
-            set 
-            { 
+            set
+            {
                 tomato = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool lettuce = true;
         /// <summary>
         /// If the burger is topped with a leaf of lettuce
         /// </summary>
-        public bool Lettuce 
+        public bool Lettuce
         {
             get { return lettuce; }
-            set 
-            { 
+            set
+            {
                 lettuce = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool mayo = true;
         /// <summary>
         /// If the burger is topped with mayo
         /// </summary>
         public bool Mayo
         {
             get { return mayo; }
-            set 
-            { 
+            set
+            {
                 mayo = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
@@ -153,19 +152,19 @@ namespace CowboyCafe.Data
         /// Special instructions for the preparation of the burger
         /// </summary>
         public override List<string> SpecialInstructions
-        { 
+        {
             get
             {
                 List<string> instructions = new List<string>();
 
-                if (!tomato) { instructions.Add("hold tomato"); }
-                if (!lettuce) { instructions.Add("hold lettuce"); }
-                if (!mayo) { instructions.Add("hold mayo"); }
-                if (!bun) { instructions.Add("hold bun"); }
-                if (!ketchup) { instructions.Add("hold ketchup"); }
-                if (!mustard) { instructions.Add("hold mustard"); }
-                if (!pickle) { instructions.Add("hold pickle"); }
-                if (!cheese) { instructions.Add("hold cheese"); }
+                if (!tomato) { instructions.Add("Hold tomato"); }
+                if (!lettuce) { instructions.Add("Hold lettuce"); }
+                if (!mayo) { instructions.Add("Hold mayo"); }
+                if (!bun) { instructions.Add("Hold bun"); }
+                if (!ketchup) { instructions.Add("Hold ketchup"); }
+                if (!mustard) { instructions.Add("Hold mustard"); }
+                if (!pickle) { instructions.Add("Hold pickle"); }
+                if (!cheese) { instructions.Add("Hold cheese"); }
 
                 return instructions;
             }

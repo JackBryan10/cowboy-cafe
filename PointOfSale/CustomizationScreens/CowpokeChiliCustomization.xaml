@@ -16,25 +16,40 @@
     <StackPanel Background="{StaticResource OrangeYellowGradient}">
         <TextBlock FontSize="40" Text=" Cowpoke Chili Customization"></TextBlock>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <TextBlock Text=""></TextBlock>
-            <CheckBox IsChecked="{Binding Cheese}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Cheese" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Cheese}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Cheese" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding SourCream}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Sour Cream" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding SourCream}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Sour Cream" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Path=GreenOnions}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Green Onions" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Path=GreenOnions}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Green Onions" FontSize="25"/>
         </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Path=TortillaStrips}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Tortilla Strips" FontSize="20"/>
+        
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Tortilla Strips" FontSize="25"/>
         </StackPanel>
 
     </StackPanel>

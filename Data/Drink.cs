@@ -2,20 +2,34 @@
  * Class Name: Drink.cs
  * Purpose: A Base class that represents a drink
 */
-using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A Base class that represents a drink
     /// </summary>
-    public abstract class Drink: IOrderItem
+    public abstract class Drink: IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// An event listener for a PropertyChangedEvent
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Size size = Size.Small;
         /// <summary>
         /// Gets the size of the drink
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        public virtual Size Size {
+            get { return size; }
+            set
+            {
+                if (size == value) return;
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
         /// <summary>
         /// Gets the price of the drink

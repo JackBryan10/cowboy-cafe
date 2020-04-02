@@ -2,7 +2,6 @@
  * Class Name: RustlersRibs.cs
  * Purpose: A class representing the Rustler's Ribs entree
 */
-using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -15,19 +14,13 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the spare ribs
         /// </summary>
-        public override double Price
-        {
-            get { return 7.50; }
-        }
+        public override double Price { get; } = 7.50;
 
         /// <summary>
         /// The calories of the spare ribs
         /// </summary>
-        public override uint Calories
-        {
-            get { return 894; }
-        }
-
+        public override uint Calories { get; } = 894; 
+        
         /// <summary>
         /// Special instructions for the preparation of the spare ribs
         /// </summary>

@@ -2,9 +2,7 @@
  * Class Name: IOrderItem.cs
  * Purpose: An Interface for all Menu Items in the Cowboy Cafe
 */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

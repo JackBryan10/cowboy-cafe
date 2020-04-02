@@ -16,11 +16,89 @@
     <StackPanel Background="{StaticResource OrangeYellowGradient}">
         <TextBlock FontSize="40" Text=" Jerked Soda Customization"></TextBlock>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <TextBlock Text=""></TextBlock>
-            <CheckBox IsChecked="{Binding Ice}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Ice" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Ice}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Ice" FontSize="25"/>
         </StackPanel>
 
+        <TextBlock FontSize="30" Text="  Soda Flavor"></TextBlock>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <RadioButton Name="CreamSodaButton" Click="IsClicked" Margin="3">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </RadioButton.LayoutTransform>
+            </RadioButton>
+            <TextBlock Text="Cream Soda" FontSize="25"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <RadioButton Name="OrangeSodaButton" Click="IsClicked" Margin="3">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </RadioButton.LayoutTransform>
+            </RadioButton>
+            <TextBlock Text="Orange Soda" FontSize="25"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <RadioButton Name="SarsparillaButton" Click="IsClicked" Margin="3">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </RadioButton.LayoutTransform>
+            </RadioButton>
+            <TextBlock Text="Sarsparilla" FontSize="25"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <RadioButton Name="BirchBeerButton" Click="IsClicked" Margin="3">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </RadioButton.LayoutTransform>
+            </RadioButton>
+            <TextBlock Text="Birch Beer" FontSize="25"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <RadioButton Name="RootBeerButton" Click="IsClicked" Margin="3">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </RadioButton.LayoutTransform>
+            </RadioButton>
+            <TextBlock Text="Root Beer" FontSize="25"/>
+        </StackPanel>
+
+        <TextBlock FontSize="30" Text="  Size"></TextBlock>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <RadioButton Name="ButtonSmall" Click="IsClicked" Margin="3">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </RadioButton.LayoutTransform>
+            </RadioButton>
+            <TextBlock Text="Small" FontSize="25"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <RadioButton Name="ButtonMedium" Click="IsClicked" Margin="3">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </RadioButton.LayoutTransform>
+            </RadioButton>
+            <TextBlock Text="Medium" FontSize="25"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+            <RadioButton Name="ButtonLarge" Click="IsClicked" Margin="3">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </RadioButton.LayoutTransform>
+            </RadioButton>
+            <TextBlock Text="Large" FontSize="25"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>

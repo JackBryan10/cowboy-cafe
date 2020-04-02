@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.CustomizationScreens.CowboyCoffeeCustomization"
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.SideCustomization"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,40 +14,10 @@
     </UserControl.Resources>
 
     <StackPanel Background="{StaticResource OrangeYellowGradient}">
-        <TextBlock FontSize="40" Text=" Cowboy Coffee Customization"></TextBlock>
-
-        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
-            <CheckBox IsChecked="{Binding RoomForCream}" Margin="3">
-                <CheckBox.LayoutTransform>
-                    <ScaleTransform ScaleX="2" ScaleY="2" />
-                </CheckBox.LayoutTransform>
-            </CheckBox>
-            <TextBlock Text="Room for Cream" FontSize="25"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
-            <CheckBox IsChecked="{Binding Ice}" Margin="3">
-                <CheckBox.LayoutTransform>
-                    <ScaleTransform ScaleX="2" ScaleY="2" />
-                </CheckBox.LayoutTransform>
-            </CheckBox>
-            <TextBlock Text="Ice" FontSize="25"/>
-        </StackPanel>
-
-        <TextBlock FontSize="30" Text="  Decaf"></TextBlock>
-
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <RadioButton Name="ButtonDecaf" Click="IsClicked" Margin="3">
-                <RadioButton.LayoutTransform>
-                    <ScaleTransform ScaleX="2" ScaleY="2" />
-                </RadioButton.LayoutTransform>
-            </RadioButton>
-            <TextBlock Text="Decaf" FontSize="25"/>
-        </StackPanel>
-        
+        <TextBlock FontSize="40" Text=" Side Customization"></TextBlock>
         <TextBlock FontSize="30" Text="  Size"></TextBlock>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
             <RadioButton Name="ButtonSmall" Click="IsClicked" Margin="3">
                 <RadioButton.LayoutTransform>
                     <ScaleTransform ScaleX="2" ScaleY="2" />
@@ -56,7 +26,7 @@
             <TextBlock Text="Small" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
             <RadioButton Name="ButtonMedium" Click="IsClicked" Margin="3">
                 <RadioButton.LayoutTransform>
                     <ScaleTransform ScaleX="2" ScaleY="2" />
@@ -65,7 +35,7 @@
             <TextBlock Text="Medium" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
             <RadioButton Name="ButtonLarge" Click="IsClicked" Margin="3">
                 <RadioButton.LayoutTransform>
                     <ScaleTransform ScaleX="2" ScaleY="2" />
@@ -73,5 +43,6 @@
             </RadioButton>
             <TextBlock Text="Large" FontSize="25"/>
         </StackPanel>
+
     </StackPanel>
 </UserControl>

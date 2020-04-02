@@ -3,7 +3,6 @@
  * Purpose: A class representing the Corn Dodgers side
 */
 using System;
-using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
@@ -60,17 +59,7 @@ namespace CowboyCafe.Data
         /// <returns>The string "*Size* Corn Dodgers"</returns>
         public override string ToString()
         {
-            switch (Size)
-            {
-                case Size.Large:
-                    return "Large Corn Dodgers";
-                case Size.Medium:
-                    return "Medium Corn Dodgers";
-                case Size.Small:
-                    return "Small Corn Dodgers";
-                default:
-                    throw new NotImplementedException("Unknown Size");
-            }
+            return Size.ToString() + " Corn Dodgers";
         }
     }
 }

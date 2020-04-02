@@ -11,7 +11,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Trail Burger entree
     /// </summary>
-    public class TrailBurger: Entree, INotifyPropertyChanged
+    public class TrailBurger : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// PropertyChangedEventHandler to notify that a property has been changed
@@ -19,75 +19,79 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         private bool bun = true;
-        private bool ketchup = true;
-        private bool mustard = true;
-        private bool pickle = true;
-        private bool cheese = true;
-
         /// <summary>
         /// If the burger has a bun
         /// </summary>
         public bool Bun
         {
             get { return bun; }
-            set 
-            { 
+            set
+            {
+                if (bun == value) return;
                 bun = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool ketchup = true;
         /// <summary>
         /// If the burger is topped with ketchup
         /// </summary>
         public bool Ketchup
         {
             get { return ketchup; }
-            set 
-            { 
+            set
+            {
+                if (ketchup == value) return;
                 ketchup = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool mustard = true;
         /// <summary>
         /// If the burger is topped with mustard
         /// </summary>
         public bool Mustard
         {
             get { return mustard; }
-            set 
-            { 
+            set
+            {
+                if (mustard == value) return;
                 mustard = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool pickle = true;
         /// <summary>
         /// If the burger is topped with pickle
         /// </summary>
         public bool Pickle
         {
             get { return pickle; }
-            set 
-            { 
+            set
+            {
+                if (pickle == value) return;
                 pickle = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
+        private bool cheese = true;
         /// <summary>
         /// If the burger is topped with a slice of cheese
         /// </summary>
         public bool Cheese
         {
             get { return cheese; }
-            set 
-            { 
+            set
+            {
+                if (cheese == value) return;
                 cheese = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
@@ -102,7 +106,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the burger
         /// </summary>
-        public override uint Calories { get; } = 288; 
+        public override uint Calories { get; } = 288;
 
         /// <summary>
         /// Special instructions for the preparation of the burger

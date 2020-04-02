@@ -17,10 +17,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// PropertyChangedEventHandler to notify that a property has been changed
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private bool roomForCream = false;
-        private bool ice = false;
+        public new event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// The price of the Cowboy Coffee drink
@@ -67,8 +64,9 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets and sets whether the Cowboy Coffee drink is Decaf or not
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf { get; set; }
 
+        private bool roomForCream = false;
         /// <summary>
         /// Gets and sets whether the Cowboy Coffee drink has room for Cream or not
         /// </summary>
@@ -83,6 +81,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool ice = false;
         /// <summary>
         /// Gets and sets whether the Cowboy Coffee drink has Ice or not
         /// </summary>
@@ -106,8 +105,8 @@ namespace CowboyCafe.Data
             {
                 List<string> instructions = new List<string>();
 
-                if (Ice) { instructions.Add("Add Ice"); }
-                if (RoomForCream) { instructions.Add("Room for Cream"); }
+                if (ice) { instructions.Add("Add Ice"); }
+                if (roomForCream) { instructions.Add("Room for Cream"); }
 
                 return instructions;
             }
@@ -120,20 +119,7 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            switch (Size)
-            {
-                case Size.Large:
-                    sb.Append("Large ");
-                    break;
-                case Size.Medium:
-                    sb.Append("Medium ");
-                    break;
-                case Size.Small:
-                    sb.Append("Small ");
-                    break;
-                default:
-                    throw new NotImplementedException("Unknown Size");
-            }
+            sb.Append(Size.ToString() + " ");
             if (Decaf) { sb.Append("Decaf "); }
             sb.Append("Cowboy Coffee");
             return sb.ToString();

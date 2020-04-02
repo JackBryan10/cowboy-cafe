@@ -3,7 +3,6 @@
  * Purpose: A class representing the Pan de Campo side
 */
 using System;
-using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
@@ -60,17 +59,7 @@ namespace CowboyCafe.Data
         /// <returns>The string "*Size* Pan de Campo"</returns>
         public override string ToString()
         {
-            switch (Size)
-            {
-                case Size.Large:
-                    return "Large Pan de Campo";
-                case Size.Medium:
-                    return "Medium Pan de Campo";
-                case Size.Small:
-                    return "Small Pan de Campo";
-                default:
-                    throw new NotImplementedException("Unknown Size");
-            }
+            return Size.ToString() + " Pan de Campo";
         }
     }
 }
