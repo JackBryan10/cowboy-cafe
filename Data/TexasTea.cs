@@ -96,22 +96,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        private bool ice = true;
-        /// <summary>
-        /// Whether the Water drink is served with Ice or not
-        /// </summary>
-        public override bool Ice
-        {
-            get { return ice; }
-            set
-            {
-                if (ice == value) return;
-                ice = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-            }
-        }
-
         private bool lemon = false;
         /// <summary>
         /// Whether the Texas Tea drink is served with Lemon or not
@@ -124,6 +108,22 @@ namespace CowboyCafe.Data
                 if (lemon == value) return;
                 lemon = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool ice = true;
+        /// <summary>
+        /// Whether the Water drink is served with Ice or not
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                if (ice == value) return;
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }

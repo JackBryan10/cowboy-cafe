@@ -50,14 +50,14 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the sandwich
-        /// </summary>
-        public override uint Calories { get; } = 528;
-
-        /// <summary>
         /// The price of the sandwich
         /// </summary>
         public override double Price { get; } = 5.88;
+
+        /// <summary>
+        /// The calories of the sandwich
+        /// </summary>
+        public override uint Calories { get; } = 528;
 
         /// <summary>
         /// Special instructions for the preparation of the sandwich
