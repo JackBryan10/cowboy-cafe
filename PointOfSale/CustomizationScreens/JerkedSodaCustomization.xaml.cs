@@ -1,6 +1,7 @@
 ﻿/* Author: Jack Walter
  * Class Name: JerkedSodaCustomization.xaml.cs
  * Purpose: A partial class for the Jerked Soda Customization screen for Cowboy Cafe Point of Sale
+ * **Using ideas inspired by Zachery Bruner's model solution**
 */
 using System.Windows;
 using System.Windows.Controls;
@@ -29,7 +30,7 @@ namespace PointOfSale.CustomizationScreens
         }
 
         /// <summary>
-        /// 
+        /// Event Handler for a click event on the Radio Buttons
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -75,11 +76,11 @@ namespace PointOfSale.CustomizationScreens
                 default:
                     break;
             }
-            order.PropertiesChanged();
+            order.PropertiesUpdate();
         }
 
         /// <summary>
-        /// 
+        /// Assigns the Drink SodaFlavor to check the correct Flavor RadioButton
         /// </summary>
         /// <param name="flavor"></param>
         public void ButtonFlavorSwitch(SodaFlavor flavor) 
@@ -127,7 +128,7 @@ namespace PointOfSale.CustomizationScreens
         }
 
         /// <summary>
-        /// 
+        /// Separates the cases of Drink Size to the correct Size RadioButton to be checked
         /// </summary>
         /// <param name="size"></param>
         public void ButtonSizeSwitch(Size size) 

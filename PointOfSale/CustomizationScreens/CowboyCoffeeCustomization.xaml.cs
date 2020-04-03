@@ -1,6 +1,7 @@
 ﻿/* Author: Jack Walter
  * Class Name: CowboyCoffeeCustomization.xaml.cs
  * Purpose: A partial class for the Cowboy Coffee Customization screen for Cowboy Cafe Point of Sale
+ * **Using ideas inspired by Zachery Bruner's model solution**
 */
 using System.Windows;
 using System.Windows.Controls;
@@ -66,11 +67,11 @@ namespace PointOfSale.CustomizationScreens
                 default:
                     break;
             }
-            order.PropertiesChanged();
+            order.PropertiesUpdate();
         }
 
         /// <summary>
-        /// Separates the cases of size to the correct button to be selected
+        /// Separates the cases of Drink Size to the correct Size RadioButton to be checked
         /// </summary>
         /// <param name="size"></param>
         public void ButtonSizeSwitch(Size size)

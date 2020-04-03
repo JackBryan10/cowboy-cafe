@@ -58,7 +58,7 @@ namespace CowboyCafe.Data
             set
             {
                 mustard = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
@@ -157,14 +157,14 @@ namespace CowboyCafe.Data
             {
                 List<string> instructions = new List<string>();
 
-                if (!tomato) { instructions.Add("Hold tomato"); }
-                if (!lettuce) { instructions.Add("Hold lettuce"); }
-                if (!mayo) { instructions.Add("Hold mayo"); }
-                if (!bun) { instructions.Add("Hold bun"); }
-                if (!ketchup) { instructions.Add("Hold ketchup"); }
-                if (!mustard) { instructions.Add("Hold mustard"); }
-                if (!pickle) { instructions.Add("Hold pickle"); }
-                if (!cheese) { instructions.Add("Hold cheese"); }
+                if (!tomato) { instructions.Add("hold tomato"); }
+                if (!lettuce) { instructions.Add("hold lettuce"); }
+                if (!mayo) { instructions.Add("hold mayo"); }
+                if (!bun) { instructions.Add("hold bun"); }
+                if (!ketchup) { instructions.Add("hold ketchup"); }
+                if (!mustard) { instructions.Add("hold mustard"); }
+                if (!pickle) { instructions.Add("hold pickle"); }
+                if (!cheese) { instructions.Add("hold cheese"); }
 
                 return instructions;
             }

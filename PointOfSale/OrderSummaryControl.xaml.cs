@@ -24,7 +24,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Event Handler for when the Item is removed from the OrderSummaryControl screen
+        /// Event Handler for Remove Button click event to remove an Item from the order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -48,7 +48,7 @@ namespace PointOfSale
         private OrderControl orderControl;
 
         /// <summary>
-        /// 
+        /// Event Handler for item selection on the Order Summary Control ListBox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -64,7 +64,7 @@ namespace PointOfSale
                         var screen = new AngryChickenCustomization();
                         screen.DataContext = angry;
                         orderControl = this.FindAncestor<OrderControl>();
-                        orderControl?.SwapScreen(screen); 
+                        orderControl?.SwapScreen(screen);
                     }
                     if (item is CowpokeChili cowpoke)
                     {
@@ -161,20 +161,20 @@ namespace PointOfSale
                         screen.ButtonFlavorSwitch(jerked.Flavor);
                         orderControl?.SwapScreen(screen);
                     }
+                    if (item is TexasTea texasTea)
+                    {
+                        var screen = new TexasTeaCustomization(DataContext);
+                        screen.DataContext = texasTea;
+                        orderControl = this.FindAncestor<OrderControl>();
+                        screen.ButtonSizeSwitch(texasTea.Size);
+                        orderControl?.SwapScreen(screen);
+                    }
                     if (item is Water water)
                     {
                         var screen = new WaterCustomization(DataContext);
                         screen.DataContext = water;
                         orderControl = this.FindAncestor<OrderControl>();
                         screen.ButtonSizeSwitch(water.Size);
-                        orderControl?.SwapScreen(screen);
-                    }
-                    if (item is TexasTea texas)
-                    {
-                        var screen = new TexasTeaCustomization(DataContext);
-                        screen.DataContext = texas;
-                        orderControl = this.FindAncestor<OrderControl>();
-                        screen.ButtonSizeSwitch(texas.Size);
                         orderControl?.SwapScreen(screen);
                     }
                 }

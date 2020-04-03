@@ -1,4 +1,8 @@
-﻿//Using ideas from Zachery Bruner's model solution for sides
+﻿/* Author: Jack Walter
+ * Class Name: SideCustomization.xaml.cs
+ * Purpose: A partial class for the Side Customization screen for Cowboy Cafe Point of Sale
+ * **Using ideas inspired by Zachery Bruner's model solution**
+*/
 using System.Windows;
 using System.Windows.Controls;
 using CowboyCafe.Data;
@@ -27,7 +31,7 @@ namespace PointOfSale.CustomizationScreens
         }
 
         /// <summary>
-        /// 
+        /// Event Handler for a click event on the Radio Buttons
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -61,11 +65,11 @@ namespace PointOfSale.CustomizationScreens
                 default:
                     break;
             }
-            order.PropertiesChanged();
+            order.PropertiesUpdate();
         }
 
         /// <summary>
-        /// 
+        /// Separates the cases of Side Size to the correct Size RadioButton to be checked
         /// </summary>
         /// <param name="size"></param>
         public void ButtonSwitch(Size size)

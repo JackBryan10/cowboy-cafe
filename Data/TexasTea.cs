@@ -19,6 +19,23 @@ namespace CowboyCafe.Data
         /// </summary>
         public new event PropertyChangedEventHandler PropertyChanged;
 
+        private Size size = Size.Small;
+        /// <summary>
+        /// Gets and sets the size of the Texas Tea drink
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                if (size == value) return;
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
+
         /// <summary>
         /// The price of the Texas Tea drink
         /// </summary>
@@ -64,10 +81,20 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool sweet = true;
         /// <summary>
         /// Whether the Texas Tea drink is sweet or not
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        public bool Sweet
+        {
+            get { return sweet; }
+            set
+            {
+                if (sweet == value) return;
+                sweet = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
+            }
+        }
 
         private bool ice = true;
         /// <summary>

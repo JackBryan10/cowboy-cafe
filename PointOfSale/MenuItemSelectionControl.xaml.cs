@@ -330,9 +330,10 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     var item = new TexasTea();
-                    var screen = new TexasTeaCustomization();
+                    var screen = new TexasTeaCustomization(DataContext);
                     screen.DataContext = item;
                     data.Add(item);
+                    screen.ButtonSizeSwitch(item.Size);
                     orderControl?.SwapScreen(screen);
                 }
             }

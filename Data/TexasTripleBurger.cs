@@ -60,7 +60,7 @@ namespace CowboyCafe.Data
             {
                 if (mustard == value) return;
                 mustard = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }

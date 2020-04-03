@@ -19,6 +19,23 @@ namespace CowboyCafe.Data
         /// </summary>
         public new event PropertyChangedEventHandler PropertyChanged;
 
+        private Size size = Size.Small;
+        /// <summary>
+        /// Gets and sets the size of the Jerked Soda drink
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                if (size == value) return;
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
+
         /// <summary>
         /// The price of the Cowboy Coffee drink
         /// </summary>
@@ -61,10 +78,20 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool decaf = false;
         /// <summary>
         /// Gets and sets whether the Cowboy Coffee drink is Decaf or not
         /// </summary>
-        public bool Decaf { get; set; }
+        public bool Decaf 
+        {
+            get { return decaf; }
+            set
+            {
+                if (decaf == value) return;
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+            } 
+        }
 
         private bool roomForCream = false;
         /// <summary>
@@ -75,6 +102,7 @@ namespace CowboyCafe.Data
             get { return roomForCream; }
             set
             {
+                if (roomForCream == value) return;
                 roomForCream = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
@@ -90,6 +118,7 @@ namespace CowboyCafe.Data
             get { return ice; }
             set
             {
+                if (ice == value) return;
                 ice = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));

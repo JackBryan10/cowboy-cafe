@@ -19,6 +19,23 @@ namespace CowboyCafe.Data
         /// </summary>
         public new event PropertyChangedEventHandler PropertyChanged;
 
+        private Size size = Size.Small;
+        /// <summary>
+        /// Gets and sets the size of the Water drink
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                if (size == value) return;
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
+
         /// <summary>
         /// The price of the Water drink
         /// </summary>

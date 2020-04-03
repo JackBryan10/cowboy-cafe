@@ -97,12 +97,11 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Updates all Properties
+        /// Updates the item when a property's Size or Flavor is changed 
         /// </summary>
-        public void PropertiesChanged() 
+        public void PropertiesUpdate()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special Instructions"));
             Subtotal = 0;
             foreach(IOrderItem item in items) 
             {
