@@ -39,11 +39,11 @@
         <TextBlock FontSize="30" Text="  Sweet"></TextBlock>
 
         <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <RadioButton Name="ButtonSweet" Click="IsClicked" Margin="3">
-                <RadioButton.LayoutTransform>
+            <CheckBox Name="ButtonSweet" Margin="3" IsChecked="{Binding Sweet}">
+                <CheckBox.LayoutTransform>
                     <ScaleTransform ScaleX="2" ScaleY="2" />
-                </RadioButton.LayoutTransform>
-            </RadioButton>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
             <TextBlock Text="Sweet" FontSize="25"/>
         </StackPanel>
 

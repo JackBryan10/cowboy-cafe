@@ -37,11 +37,11 @@
         <TextBlock FontSize="30" Text="  Decaf"></TextBlock>
 
         <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <RadioButton Name="ButtonDecaf" Click="IsClicked" Margin="3">
-                <RadioButton.LayoutTransform>
+            <CheckBox Name="ButtonDecaf" IsChecked="{Binding Decaf}" Margin="3">
+                <CheckBox.LayoutTransform>
                     <ScaleTransform ScaleX="2" ScaleY="2" />
-                </RadioButton.LayoutTransform>
-            </RadioButton>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
             <TextBlock Text="Decaf" FontSize="25"/>
         </StackPanel>
         

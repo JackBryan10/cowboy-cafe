@@ -40,18 +40,6 @@ namespace PointOfSale.CustomizationScreens
 
             switch (((RadioButton)sender).Name)
             {
-                case "ButtonDecaf":
-                    if (drink.Decaf) 
-                    { 
-                        drink.Decaf = false;
-                        ButtonDecaf.IsChecked = false;
-                    }
-                    else 
-                    {
-                        drink.Decaf = true;
-                        ButtonDecaf.IsChecked = true;
-                    }
-                    break;
                 case "ButtonSmall":
                     drink.Size = Size.Small;
                     ButtonSizeSwitch(drink.Size);
