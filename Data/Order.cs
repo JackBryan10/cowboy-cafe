@@ -16,17 +16,17 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Stores the order number for the previous order
         /// </summary>
-        private uint lastOrderNumber;
-        
+        public static uint lastOrderNumber = 0;
+
         /// <summary>
         /// Stores the order number for the current order
         /// </summary>
-        public uint OrderNumber { get { return lastOrderNumber++; } }
+        public uint OrderNumber { get; private set; }
 
         /// <summary>
         /// Private backing variable for the items in the order
         /// </summary>
-        private List<IOrderItem> items = new List<IOrderItem>();
+        private List<IOrderItem> items;
 
         /// <summary>
         /// Gets an array representation of the menu items in the order
@@ -34,14 +34,28 @@ namespace CowboyCafe.Data
         public IEnumerable<IOrderItem> Items { get { return items.ToArray(); } }
 
         /// <summary>
-        /// Gets the Subtotal of the order
+        /// Gets the Subtotal price before tax of the order
         /// </summary>
         public double Subtotal { get; set; }
+
+        /// <summary>
+        /// Gets the Total price after tax of the order
+        /// </summary>
+        public double Total { get; set; }
         
         /// <summary>
         /// An event listener for a PropertyChangedEvent
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Constructor for the Order class
+        /// </summary>
+        public Order() 
+        {
+            items = new List<IOrderItem>();
+            OrderNumber = lastOrderNumber++;
+        }
 
         /// <summary>
         /// Adds an IOrderItem to the order
@@ -57,8 +71,10 @@ namespace CowboyCafe.Data
             }
 
             Subtotal += item.Price;
+            Total = Subtotal * 1.16;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
 
@@ -76,8 +92,10 @@ namespace CowboyCafe.Data
             }
             
             Subtotal -= item.Price;
+            Total = Subtotal * 1.16;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
 
@@ -106,7 +124,9 @@ namespace CowboyCafe.Data
             foreach(IOrderItem item in items) 
             {
                 Subtotal += item.Price;
+                Total = Subtotal * 1.16;
             }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }

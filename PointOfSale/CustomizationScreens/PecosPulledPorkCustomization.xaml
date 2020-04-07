@@ -16,15 +16,22 @@
     <StackPanel Background="{StaticResource OrangeYellowGradient}">
         <TextBlock FontSize="40" Text=" Pecos Pulled Pork Customization"></TextBlock>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <TextBlock Text=""></TextBlock>
-            <CheckBox IsChecked="{Binding Bread}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Bread" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Bread}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Bread" FontSize="25"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-            <CheckBox IsChecked="{Binding Pickle}" Width="25" Margin="0,8"/>
-            <TextBlock Text="Pickle" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+            <CheckBox IsChecked="{Binding Pickle}" Margin="3">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock Text="Pickle" FontSize="25"/>
         </StackPanel>
 
     </StackPanel>

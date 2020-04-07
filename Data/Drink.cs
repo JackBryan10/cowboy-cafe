@@ -49,6 +49,6 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets the special instuctions for the entree
         /// </summary>
-        public abstract List<string> SpecialInstructions{ get; }
+        public abstract List<string> SpecialInstructions { get; }
     }
 }

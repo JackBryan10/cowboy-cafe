@@ -38,7 +38,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new Order();
+            var mainWindow = this.FindAncestor<MainWindow>();
+            TransactionControl transaction = new TransactionControl();
+            transaction.DataContext = DataContext;
+            mainWindow.WindowContainer.Child = transaction;
         }
 
         /// <summary>
@@ -52,7 +55,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Swaps the Windows 
+        /// Swaps the Windows in the Container Border 
         /// </summary>
         /// <param name="element"></param>
         public void SwapScreen(FrameworkElement element)

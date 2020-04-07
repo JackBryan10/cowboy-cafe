@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
         Title="Cowboy Cafe Point of Sale" Height="580" Width="1070">
-    <Grid Height="536" Background="Lavender">
-        <local:OrderControl/>
-    </Grid>
+    <Border Name="WindowContainer">
+        <Grid Height="536" Background="Lavender">
+            <local:OrderControl/>
+        </Grid>
+    </Border>
 </Window>
