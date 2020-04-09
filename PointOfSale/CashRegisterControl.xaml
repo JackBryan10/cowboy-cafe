@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="PointOfSale.CashRegisterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="Orange">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{Binding Path=RunningTotal, StringFormat=c}" TextAlignment="Center" VerticalAlignment="Center" FontSize="40" Grid.Column="0"/>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Name="Ones" Click="BillButton_Click" Grid.Column="5" Content="One" 
+                FontSize="25" BorderBrush="DarkGreen"  Background="ForestGreen" BorderThickness="15"/>
+            <Button Name="Fives" Click="BillButton_Click" Grid.Column="4" Content="Five" 
+                FontSize="25" BorderBrush="DarkGreen"  Background="ForestGreen" BorderThickness="15"/>
+            <Button Name="Tens" Click="BillButton_Click" Grid.Column="3" Content="Ten" 
+                FontSize="25" BorderBrush="DarkGreen"  Background="ForestGreen" BorderThickness="15"/>
+            <Button Name="Twenties" Click="BillButton_Click" Grid.Column="2" Content="Twenty" 
+                FontSize="25" BorderBrush="DarkGreen"  Background="ForestGreen" BorderThickness="15"/>
+            <Button Name="Fifties" Click="BillButton_Click" Grid.Column="1" Content="Fifty" 
+                FontSize="25" BorderBrush="DarkGreen"  Background="ForestGreen" BorderThickness="15"/>
+            <Button Name="Hundreds" Click="BillButton_Click" Grid.Column="0" Content="Hundred" 
+                FontSize="25" BorderBrush="DarkGreen"  Background="ForestGreen" BorderThickness="15"/>
+        </Grid>
+        
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="Pennies" Click="CoinButton_Click" Grid.Column="3" Content="Penny"
+                FontSize="25" Background="Gold" BorderBrush="Goldenrod" BorderThickness="10"/>
+            <Button Name="Nickels" Click="CoinButton_Click" Grid.Column="2" Content="Nickel"
+                FontSize="25" Background="Gold" BorderBrush="Goldenrod" BorderThickness="10"/>
+            <Button Name="Dimes" Click="CoinButton_Click" Grid.Column="1" Content="Dime"
+                FontSize="25" Background="Gold" BorderBrush="Goldenrod" BorderThickness="10"/>
+            <Button Name="Quarters" Click="CoinButton_Click" Grid.Column="0" Content="Quarter"
+                FontSize="25" Background="Gold" BorderBrush="Goldenrod" BorderThickness="10"/>
+        </Grid>
+
+        <Button Content="Open Cash Drawer" Click="OpenDrawer_Click" Grid.Column="2" FontSize="25" />
+
+
+    </Grid>
+</UserControl>

@@ -4,7 +4,7 @@
 */
 using System.Windows.Controls;
 
-namespace PointOfSale.Customization_Screens
+namespace PointOfSale.CustomizationScreens
 {
     /// <summary>
     /// Interaction logic for CowpokeChiliCustomization.xaml

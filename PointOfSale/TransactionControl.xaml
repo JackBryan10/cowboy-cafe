@@ -10,10 +10,10 @@
     <UserControl.Resources>
         <LinearGradientBrush x:Key="LightBlueGradient" StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="SkyBlue" Offset="0"/>
-            <GradientStop Color="Azure" Offset="1"/>
+            <GradientStop Color="DodgerBlue" Offset="1"/>
         </LinearGradientBrush>
     </UserControl.Resources>
-
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -41,24 +41,21 @@
         </ListBox>
 
         <StackPanel Name="OrderNameBox" Orientation="Horizontal" 
-                    Grid.Column="0" Grid.Row="1" 
-                    Height="40" VerticalAlignment="Top"
+                    Grid.Column="0" Grid.Row="1"
                     Background="DodgerBlue">
-            <TextBlock Name="Order" TextAlignment="Left" FontSize="25"  Text="  Order Number #"/>
-            <TextBlock FontSize="25" Text="{Binding OrderNumber}"/>
+            <TextBlock VerticalAlignment="Center" TextAlignment="Center" Name="Order" FontSize="30"  Text="      Order Number #"/>
+            <TextBlock VerticalAlignment="Center" FontSize="30" Text="{Binding OrderNumber}"/>
         </StackPanel>
 
-        <TextBlock Name="ErroMessageBox" Grid.Column="0" Grid.Row="1" Height="40" VerticalAlignment="Bottom"/>
-
         <TextBlock Grid.Row="1" Grid.Column="1" FontSize="25" Text="Subtotal " 
-                   Height="40" TextAlignment="Right" VerticalAlignment="Top"/>
+                   Background="Orange" Height="40" TextAlignment="Right" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="1" Grid.Column="2" FontSize="25" Text="{Binding Path=Subtotal, StringFormat=c}" 
-                   Height="40" VerticalAlignment="Top" Margin="0,0,5,0"/>
+                   Background="Orange" Height="40" VerticalAlignment="Top" Margin="0,0,5,0"/>
 
         <TextBlock Grid.Row="1" Grid.Column="1" FontSize="25" Text="Total " 
-                   Background="Orange" TextAlignment="Right" Height="40" VerticalAlignment="Bottom" />
+                   Background="Yellow" TextAlignment="Right" Height="40" VerticalAlignment="Bottom" />
         <TextBlock Grid.Row="1" Grid.Column="2" FontSize="25" Text="{Binding Path=Total, StringFormat=c}" 
-                   Background="Orange" Height="40" VerticalAlignment="Bottom" Margin="0,0,5,0"/>
+                   Background="Yellow" Height="40" VerticalAlignment="Bottom" Margin="0,0,5,0"/>
 
         <Button Grid.Column="0" Content="Credit Payment" Click="CreditPaymentButton_Click" 
                 FontSize="30" Margin="10" Width="300" Height="80" HorizontalAlignment="Center"/>

@@ -9,12 +9,12 @@ namespace PointOfSale.CustomizationScreens
     /// <summary>
     /// Interaction logic for TrailBurgerCustomizations.xaml
     /// </summary>
-    public partial class TrailBurgerCustomizations : UserControl
+    public partial class TrailBurgerCustomization : UserControl
     {
         /// <summary>
         /// Constructor for the TrailBurgerCustomizations Order Control
         /// </summary>
-        public TrailBurgerCustomizations()
+        public TrailBurgerCustomization()
         {
             InitializeComponent();
         }

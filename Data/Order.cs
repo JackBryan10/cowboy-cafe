@@ -16,12 +16,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Stores the order number for the previous order
         /// </summary>
-        public static uint lastOrderNumber = 0;
+        public static uint LastOrderNumber = 0;
 
         /// <summary>
         /// Stores the order number for the current order
         /// </summary>
-        public uint OrderNumber { get; private set; }
+        public uint OrderNumber { get; set; }
 
         /// <summary>
         /// Private backing variable for the items in the order
@@ -54,7 +54,7 @@ namespace CowboyCafe.Data
         public Order() 
         {
             items = new List<IOrderItem>();
-            OrderNumber = lastOrderNumber++;
+            OrderNumber = LastOrderNumber++;
         }
 
         /// <summary>

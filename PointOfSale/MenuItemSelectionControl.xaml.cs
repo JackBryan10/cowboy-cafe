@@ -6,7 +6,6 @@ using System.Windows;
 using System.Windows.Controls;
 using CowboyCafe.Data;
 using PointOfSale.CustomizationScreens;
-using PointOfSale.Customization_Screens;
 
 namespace PointOfSale
 {
@@ -147,7 +146,7 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     var item = new TrailBurger();
-                    var screen = new TrailBurgerCustomizations();
+                    var screen = new TrailBurgerCustomization();
                     screen.DataContext = item;
                     data.Add(item);
                     orderControl?.SwapScreen(screen);

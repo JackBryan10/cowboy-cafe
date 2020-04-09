@@ -6,7 +6,6 @@ using System.Windows.Controls;
 using System.Windows;
 using CowboyCafe.Data;
 using PointOfSale.CustomizationScreens;
-using PointOfSale.Customization_Screens;
 
 namespace PointOfSale
 {
@@ -96,7 +95,7 @@ namespace PointOfSale
                     }
                     if (item is TrailBurger trail)
                     {
-                        var screen = new TrailBurgerCustomizations();
+                        var screen = new TrailBurgerCustomization();
                         screen.DataContext = trail;
                         orderControl = this.FindAncestor<OrderControl>();
                         orderControl?.SwapScreen(screen);
