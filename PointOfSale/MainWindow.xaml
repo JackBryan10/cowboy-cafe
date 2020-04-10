@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="Cowboy Cafe Point of Sale" Height="580" Width="1070">
+        Title="Cowboy Cafe Point of Sale" Height="580" Width="1100">
     <Border Name="WindowContainer">
-        <Grid Height="536" Background="Lavender">
+        <Grid Height="536" Background="White">
             <local:OrderControl/>
         </Grid>
     </Border>

@@ -61,8 +61,7 @@
                 FontSize="25" Background="Gold" BorderBrush="Goldenrod" BorderThickness="10"/>
         </Grid>
 
-        <Button Content="Open Cash Drawer" Click="OpenDrawer_Click" Grid.Column="2" FontSize="25" />
-
+        <Button Name="OpenDrawerButton" Content="Open Cash Drawer" Click="OpenDrawer_Click" IsEnabled="False" Grid.Column="2" FontSize="25" />
 
     </Grid>
 </UserControl>

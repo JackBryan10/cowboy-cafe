@@ -4,29 +4,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" d:DesignHeight="460" d:DesignWidth="600">
+             mc:Ignorable="d" d:DesignHeight="455" d:DesignWidth="600">
     <UserControl.Resources>
         <LinearGradientBrush x:Key="OrangeYellowGradient" StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="Orange" Offset="0"/>
             <GradientStop Color="Yellow" Offset="1"/>
         </LinearGradientBrush>
 
+        <LinearGradientBrush x:Key="GreenGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="Chartreuse" Offset="0"/>
+            <GradientStop Color="White" Offset="2"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="SkyBlueGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="DeepSkyBlue" Offset="0"/>
+            <GradientStop Color="White" Offset="2"/>
+        </LinearGradientBrush>
+
         <Style TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource OrangeYellowGradient}"></Setter>
-            <Setter Property="Height" Value="62" ></Setter>
-            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Background" Value="{StaticResource OrangeYellowGradient}"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="FontSize" Value="18"/>
         </Style>
     </UserControl.Resources>
 
     <Grid>
-        <Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment="Center" FontSize="20" Background="Azure">Entrees</TextBlock>
+        <TextBox Grid.Row="0" Grid.ColumnSpan="3" Background="DodgerBlue"/>
+
+        <TextBlock Text="Entrees" TextAlignment="Center" Foreground="White" FontSize="22" Background="Transparent"/>
+        <StackPanel Grid.Column="0" Grid.Row="1">
             <Button Name ="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
             <Button Name ="CowpokeChiliButton" Click="CowpokeChiliButton_Click">Cowpoke Chili</Button>
             <Button Name ="DakotaDoubleBurgerButton" Click="DakotaDoubleBurgerButton_Click">Dakota Double Burger</Button>
@@ -36,20 +52,20 @@
             <Button Name ="TexasTripleBurgerButton" Click="TexasTripleBurgerButton_Click">Texas Triple Burger</Button>
         </StackPanel>
 
-        <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center" FontSize="20" Background="LightBlue">Side</TextBlock>
-            <Button Name ="BakedBeansButton" Click="BakedBeansButton_Click">Baked Beans</Button>
-            <Button Name ="ChiliCheeseFriesButton" Click="ChiliCheeseFriesButton_Click">Chili Cheese Fries</Button>
-            <Button Name ="CornDodgersButton" Click="CornDodgersButton_Click">Corn Dodgers</Button>
-            <Button Name ="PanDeCampoButton" Click="PanDeCampoButton_Click">Pan De Campo</Button>
+        <TextBlock Text="Side" TextAlignment="Center" Foreground="White" Grid.Column="1" Grid.Row="0" FontSize="22" Background="Transparent"/>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button Name ="BakedBeansButton" Background="{StaticResource GreenGradient}" Height="105"  Click="BakedBeansButton_Click">Baked Beans</Button>
+            <Button Name ="ChiliCheeseFriesButton" Background="{StaticResource GreenGradient}" Height="105" Click="ChiliCheeseFriesButton_Click">Chili Cheese Fries</Button>
+            <Button Name ="CornDodgersButton" Background="{StaticResource GreenGradient}" Height="105"  Click="CornDodgersButton_Click">Corn Dodgers</Button>
+            <Button Name ="PanDeCampoButton" Background="{StaticResource GreenGradient}" Height="105" Click="PanDeCampoButton_Click">Pan De Campo</Button>
         </StackPanel>
 
-        <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center" FontSize="20" Background="SkyBlue">Drink</TextBlock>
-            <Button Name ="CowboyCoffeeButton" Click="CowboyCoffeeButton_Click">Cowboy Coffee</Button>
-            <Button Name ="JerkedSodaButton" Click="JerkedSodaButton_Click">Jerked Soda</Button>
-            <Button Name ="TexasTeaButton" Click="TexasTeaButton_Click">Texas Tea</Button>
-            <Button Name ="WaterButton" Click="WaterButton_Click">Water</Button>
+        <TextBlock Text="Drink" TextAlignment="Center" Foreground="White" Grid.Column="2" Grid.Row="0" FontSize="22" Background="Transparent"/>
+        <StackPanel Grid.Column="2" Grid.Row="2">
+            <Button Name ="CowboyCoffeeButton" Background="{StaticResource SkyBlueGradient}" Height="105" Click="CowboyCoffeeButton_Click">Cowboy Coffee</Button>
+            <Button Name ="JerkedSodaButton" Background="{StaticResource SkyBlueGradient}" Height="105" Click="JerkedSodaButton_Click">Jerked Soda</Button>
+            <Button Name ="TexasTeaButton" Background="{StaticResource SkyBlueGradient}" Height="105" Click="TexasTeaButton_Click">Texas Tea</Button>
+            <Button Name ="WaterButton" Background="{StaticResource SkyBlueGradient}" Height="105" Click="WaterButton_Click">Water</Button>
         </StackPanel>
     </Grid>
 </UserControl>

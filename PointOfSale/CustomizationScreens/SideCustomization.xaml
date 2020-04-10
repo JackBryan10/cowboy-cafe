@@ -7,13 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="600">
     <UserControl.Resources>
-        <LinearGradientBrush x:Key="OrangeYellowGradient" StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="Orange" Offset="0"/>
-            <GradientStop Color="Yellow" Offset="1"/>
+        <LinearGradientBrush x:Key="GreenGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="Chartreuse" Offset="0"/>
+            <GradientStop Color="White" Offset="2"/>
         </LinearGradientBrush>
     </UserControl.Resources>
 
-    <StackPanel Background="{StaticResource OrangeYellowGradient}">
+    <StackPanel Background="{StaticResource GreenGradient}">
         <TextBlock FontSize="40" Text=" Side Customization"></TextBlock>
         <TextBlock FontSize="30" Text="  Size"></TextBlock>
 

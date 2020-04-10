@@ -138,7 +138,7 @@ namespace CowboyCafe.Data
             get { return mayo; }
             set
             {
-                if (lettuce == value) return;
+                if (mayo == value) return;
                 mayo = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));

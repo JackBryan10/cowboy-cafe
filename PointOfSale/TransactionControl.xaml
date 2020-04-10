@@ -10,10 +10,41 @@
     <UserControl.Resources>
         <LinearGradientBrush x:Key="LightBlueGradient" StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="SkyBlue" Offset="0"/>
-            <GradientStop Color="DodgerBlue" Offset="1"/>
+            <GradientStop Color="DodgerBlue" Offset="0.5"/>
         </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="RedOrangeGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="White" Offset="0"/>
+            <GradientStop Color="OrangeRed" Offset="0.1"/>
+            <GradientStop Color="Orange" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="GreenYellowGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="SkyBlue" Offset="0"/>
+            <GradientStop Color="Green" Offset="0.1"/>
+            <GradientStop Color="Chartreuse" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="ChromeGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="SkyBlue" Offset="0"/>
+            <GradientStop Color="Gray" Offset="0.1"/>
+            <GradientStop Color="LightGray" Offset="0.5"/>
+            <GradientStop Color="DarkGray" Offset="0.55"/>
+            <GradientStop Color="LightGray" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="YellowOrangeGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="Orange" Offset="0"/>
+            <GradientStop Color="Yellow" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="BlueGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="DodgerBlue" Offset="0"/>
+            <GradientStop Color="SkyBlue" Offset="1"/>
+        </LinearGradientBrush>
+
     </UserControl.Resources>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -22,18 +53,18 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <ListBox ItemsSource="{Binding Path=Items}" 
-                 Grid.Row="2" Grid.ColumnSpan="3"
-                 Margin="5" Height="400" FontSize="14" 
+                 Grid.Row="3" Grid.ColumnSpan="3"
+                 Margin="5" Height="600" FontSize="14" 
                  Background="{StaticResource LightBlueGradient}" 
                  VerticalAlignment="Top">
 
             <ListBox.ItemTemplate>
-
                 <DataTemplate>
                     <TextBlock Grid.Column="0" TextAlignment="Left" Text="{Binding}" FontSize="25"/>
                 </DataTemplate>
@@ -41,29 +72,50 @@
         </ListBox>
 
         <StackPanel Name="OrderNameBox" Orientation="Horizontal" 
-                    Grid.Column="0" Grid.Row="1"
-                    Background="DodgerBlue">
-            <TextBlock VerticalAlignment="Center" TextAlignment="Center" Name="Order" FontSize="30"  Text="      Order Number #"/>
-            <TextBlock VerticalAlignment="Center" FontSize="30" Text="{Binding OrderNumber}"/>
+                    Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"
+                    Background="DodgerBlue" Margin="5,0,0,0">
+            <TextBlock VerticalAlignment="Center" TextAlignment="Center" Name="Order" FontSize="30"  Text="      Order Number #" Foreground="White"/>
+            <TextBlock VerticalAlignment="Center" FontSize="30" Text="{Binding OrderNumber}" Foreground="White"/>
         </StackPanel>
 
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="{StaticResource BlueGradient}" Margin="0,0,5,0"/>
         <TextBlock Grid.Row="1" Grid.Column="1" FontSize="25" Text="Subtotal " 
-                   Background="Orange" Height="40" TextAlignment="Right" VerticalAlignment="Top"/>
+                   Height="40" TextAlignment="Right" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="1" Grid.Column="2" FontSize="25" Text="{Binding Path=Subtotal, StringFormat=c}" 
-                   Background="Orange" Height="40" VerticalAlignment="Top" Margin="0,0,5,0"/>
+                   Height="40" VerticalAlignment="Top" Margin="0,0,5,0"/>
 
-        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="25" Text="Total " 
-                   Background="Yellow" TextAlignment="Right" Height="40" VerticalAlignment="Bottom" />
-        <TextBlock Grid.Row="1" Grid.Column="2" FontSize="25" Text="{Binding Path=Total, StringFormat=c}" 
-                   Background="Yellow" Height="40" VerticalAlignment="Bottom" Margin="0,0,5,0"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="{StaticResource YellowOrangeGradient}" Margin="0,0,5,0"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="25" Text="Total " 
+                   TextAlignment="Right" Height="40" VerticalAlignment="Bottom" />
+        <TextBlock Grid.Row="2" Grid.Column="2" FontSize="25" Text="{Binding Path=Total, StringFormat=c}" 
+                   Height="40" VerticalAlignment="Bottom" Margin="0,0,5,0"/>
 
-        <Button Grid.Column="0" Content="Credit Payment" Click="CreditPaymentButton_Click" 
-                FontSize="30" Margin="10" Width="300" Height="80" HorizontalAlignment="Center"/>
-        <Button Grid.Column="1" Content="Cash Payment" Click="CashPaymentButton_Click" 
-                FontSize="30" Margin="10" Width="300" Height="80" HorizontalAlignment="Center"/>
-        <Button Grid.Column="2" Content="Cancel Order" Click="CancelOrderButton_Click" 
-                FontSize="30" Margin="10" Width="300" Height="80" HorizontalAlignment="Center" >
-
+        <Button Grid.Column="0" Content="Credit Payment" Click="CreditPaymentButton_Click" Background="{StaticResource ChromeGradient}" 
+                FontSize="30" Margin="10" Width="330" Height="80" HorizontalAlignment="Center">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
         </Button>
+
+        <Button Grid.Column="1" Content="Cash Payment" Click="CashPaymentButton_Click" Background="{StaticResource GreenYellowGradient}"
+                FontSize="30" Margin="10" Width="330" Height="80" HorizontalAlignment="Center">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Grid.Column="2" Content="Cancel Order" Click="CancelOrderButton_Click" Background="{StaticResource RedOrangeGradient}"
+                FontSize="30" Margin="10" Width="330" Height="80" HorizontalAlignment="Center" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
     </Grid>
 </UserControl>

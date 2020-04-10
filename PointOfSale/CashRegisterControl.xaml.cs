@@ -65,6 +65,7 @@ namespace PointOfSale
                             data.BillsAdded.Add(Bills.Hundred);
                             break;
                     }
+                    if (data.RunningTotal < 0.009 || data.RunningTotal == 0) { OpenDrawerButton.IsEnabled = true; }
                 }
             }
         }
@@ -99,6 +100,7 @@ namespace PointOfSale
                             data.CoinsAdded.Add(Coins.Quarter);
                             break;
                     }
+                    if (data.RunningTotal < 0.009 || data.RunningTotal == 0) { OpenDrawerButton.IsEnabled = true; }
                 }
             }
         }
@@ -185,7 +187,7 @@ namespace PointOfSale
             int[] ChangeList = new int[10];
             if (DataContext is CashRegisterModelView data)
             {
-                int change = (int)(Math.Round(-data.RunningTotal, 2)*100);
+                int change = (int)(Math.Round(-data.RunningTotal, 2) * 100);
 
                 int hundreds = (change / 10000);
                 int fifties = ((change % 10000) / 5000);

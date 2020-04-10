@@ -92,7 +92,7 @@ namespace PointOfSale
                 var mainWindow = this.FindAncestor<MainWindow>();
                 var cashRegisterControl = new CashRegisterControl(this);
                 var cashRegisterModelView = new CashRegisterModelView();
-                cashRegisterModelView.RunningTotal = order.Total;
+                cashRegisterModelView.RunningTotal = Math.Round(order.Total, 2);
                 cashRegisterControl.DataContext = cashRegisterModelView;
                 mainWindow.WindowContainer.Child = cashRegisterControl;
             }
