@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Cowboy Cafe</h1>
+        <p>
+            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+            Shake off the dust on your boots and sake your thirst with one of our old-fashioned
+            hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the mighty
+            Texas Triple Burger! <br /> You’ve had a hard ride - so take it easy with us.
+        </p>
+
+        <h2>
+            Entrees
+        </h2>
+
+        <div class="menu-item">
+            @Menu.Entrees().ToArray()[0]&nbsp;&nbsp;&nbsp;@String.Format("{0:C}", Menu.Entrees().ToArray()[0].Price)&nbsp;&nbsp;&nbsp;@Menu.Entrees().ToArray()[0].Calories<br />
+            @Menu.Entrees().ToArray()[1]&nbsp;&nbsp;&nbsp;@String.Format("{0:C}", Menu.Entrees().ToArray()[1].Price)&nbsp;&nbsp;&nbsp;@Menu.Entrees().ToArray()[1].Calories<br />
+            @Menu.Entrees().ToArray()[2]&nbsp;&nbsp;&nbsp;@String.Format("{0:C}", Menu.Entrees().ToArray()[2].Price)&nbsp;&nbsp;&nbsp;@Menu.Entrees().ToArray()[2].Calories<br />
+            @Menu.Entrees().ToArray()[3]&nbsp;&nbsp;&nbsp;@String.Format("{0:C}", Menu.Entrees().ToArray()[3].Price)&nbsp;&nbsp;&nbsp;@Menu.Entrees().ToArray()[3].Calories<br />
+            @Menu.Entrees().ToArray()[4]&nbsp;&nbsp;&nbsp;@String.Format("{0:C}", Menu.Entrees().ToArray()[4].Price)&nbsp;&nbsp;&nbsp;@Menu.Entrees().ToArray()[4].Calories<br />
+            @Menu.Entrees().ToArray()[5]&nbsp;&nbsp;&nbsp;@String.Format("{0:C}", Menu.Entrees().ToArray()[5].Price)&nbsp;&nbsp;&nbsp;@Menu.Entrees().ToArray()[5].Calories<br />
+            @Menu.Entrees().ToArray()[6]&nbsp;&nbsp;&nbsp;@String.Format("{0:C}", Menu.Entrees().ToArray()[6].Price)&nbsp;&nbsp;&nbsp;@Menu.Entrees().ToArray()[6].Calories
+        </div>
+
+        <h2>
+            Sides
+        </h2>
+        <div class="menu-item">
+            @Menu.Sides().ToArray()[0]&nbsp;&nbsp;&nbsp;$@Menu.Sides().ToArray()[0].Price&nbsp;&nbsp;&nbsp;@Menu.Sides().ToArray()[0].Calories<br />
+            @Menu.Sides().ToArray()[1]&nbsp;&nbsp;&nbsp;$@Menu.Sides().ToArray()[1].Price&nbsp;&nbsp;&nbsp;@Menu.Sides().ToArray()[1].Calories<br />
+            @Menu.Sides().ToArray()[2]&nbsp;&nbsp;&nbsp;$@Menu.Sides().ToArray()[2].Price&nbsp;&nbsp;&nbsp;@Menu.Sides().ToArray()[2].Calories<br />
+            @Menu.Sides().ToArray()[3]&nbsp;&nbsp;&nbsp;$@Menu.Sides().ToArray()[3].Price&nbsp;&nbsp;&nbsp;@Menu.Sides().ToArray()[3].Calories
+        </div>
+
+        <h2>
+            Drinks
+        </h2>
+    </div>
