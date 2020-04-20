@@ -45,7 +45,7 @@ namespace CowboyCafe.Data
             list.Add(new BakedBeans());
             list.Add(new ChiliCheeseFries());
             list.Add(new CornDodgers());
-            list.Add(new PecosPulledPork());
+            list.Add(new PanDeCampo());
 
             return list;
         }
