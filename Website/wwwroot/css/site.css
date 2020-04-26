@@ -27,12 +27,12 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 @media (min-width: 768px) {
     html {
-        font-size: 16px;
+        font-size: 22px;
     }
 }
 
@@ -78,6 +78,11 @@ body {
     font-family: Playbill;
 }
 
+.cowboy-font-body {
+    font-family: Playbill;
+    font-size: 32px;
+}
+
 /*For Items on the Menu*/
 .menu-item {
     display: flex;
@@ -88,14 +93,23 @@ body {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-    .menu-item > p {
+    #menu-item > p {
+        padding: 0;
+        margin: 0;
         font-size: 1.2rem;
+    }
+
+    #menu-item > h2 {
+        border-top: 2px solid lightgray;
+    }
+    #menu-item > h5{
+        border-top: 8px;
     }
 
 /*Columns for the different menu item details*/
 .column {
     float: right;
-    padding: 0px;
+    padding: 0;
     margin: 0;
     text-align: right;
 }
@@ -105,21 +119,76 @@ body {
         margin: 0;
     }
 
+/********Columns for Entree items********/
 /*left column*/
 .left {
-    width: 42.5%;
+    width: 37.5%;
     text-align: right;
 }
 
 /*right column*/
 .right {
-    width: 42.5%;
+    width: 37.5%;
     text-align: left;
 }
 
 /*middle column*/
 .middle {
-    width: 15%;
+    width: 25%;
     text-align: center;
 }
 
+/*Search Bar*/
+.searchBar {
+    width: 75%;
+    border-radius: 20px;
+    border: 1px lightgray solid;
+    padding: 5px 5px 5px 25px;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .08);
+    top: 0;
+    left: 0;
+    z-index: 5;
+    text-align: center;
+}
+
+
+#search, #category, #calories, #prices {
+    float: none;
+    display: flex;
+    flex-direction: row;
+    position: center;
+    padding: 5px 5px 5px 25px;
+    margin-right: 5px;
+}
+
+.searchButton {
+    width: 25%;
+    border-radius: 20px;
+    border: 1px lightgray solid;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+#category input[type=checkbox] {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: bottom;
+}
+
+hr.rounded {
+    border-top: 4px solid lightgray;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .08);
+    border-radius: 5px;
+}
+
+#filters input[type=number] {
+    width: 4.5rem;
+    border: 1px lightgray solid;
+    border-radius: 20px;
+    padding: 5px 5px 5px 15px;
+}
+
+#filters h5 {
+    margin-bottom: 0.2rem;
+    width: 100%;
+}

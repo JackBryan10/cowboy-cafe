@@ -4,99 +4,147 @@
     ViewData["Title"] = "Home page";
 }
 
-    <div class="text-center">
-        <h1 class="display-3 cowboy-font">Cowboy Cafe</h1>
-        <p>
-            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
-            Shake off the dust on your boots and sake your thirst with one of our old-fashioned
-            hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the mighty
-            Texas Triple Burger! <br /> You’ve had a hard ride - so take it easy with us.
-        </p>
+<div class="text-center">
+    <h1 class="display-3 cowboy-font">Cowboy Cafe</h1>
+    <h5 class="cowboy-font-body">
+        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+        Shake off the dust on your boots and sake your thirst with one of our old-fashioned
+        hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the mighty
+        Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
+    </h5>
+    <hr class="rounded">
+    <form id="menu" method="post">
 
-        <!--Lists the Entrees in order-->
-        <h2>
-            Entrees
-        </h2>
-
-        <div class="menu-item">
-            <p></p>
-            @foreach (Entree item in Menu.Entrees())
-            {
-                <div class="row">
-                    <div class="column left">
-                        <h5>@item</h5>
-                    </div>
-                    <div class="column middle">
-                        <p>@item.Calories</p>
-                    </div>
-                    <div class="column right">
-                        <p>@String.Format("{0:C}", item.Price)</p>
-                    </div>
-                </div>
-            }
-            <p></p>
+        <div id="search">
+            <input type="text" class="searchBar" name="SearchTerms" value="@Model.SearchTerms" size="50" />
+            <input type="submit" class="searchButton" value="Search">
         </div>
-        <p></p>
 
-        <!--Lists the Sides in order-->
-        <h2>
-            Sides
-        </h2>
-        <div class="menu-item">
-            <p></p>
-            @foreach (Side item in Menu.Sides())
-            {
-                <h5>@item.ToString().Remove(0, 5)</h5>
-                for (item.Size = Size.Small; item.Size <= Size.Large; item.Size++)
+        <div id="filters">
+            <div id="category">
+                <h5 />Category:
+                @foreach (string category in Menu.Categories)
                 {
+                    <label>
+                        <input type="checkbox" name="Categories" value="@category" checked="@Model.Categories?.Contains(category)" />
+                        @category
+                    </label>
+                }
+            </div>
+            <div id="calories">
+                <h5 />Calories:
+                Between
+                <input name="CaloriesMin" type="number" min="0" max="5000" step="1" placeholder="min" value="@Model.CaloriesMin" />
+                and
+                <input name="CaloriesMax" type="number" min="0" max="5000" step="1" placeholder="min" value="@Model.CaloriesMax" />
+            </div>
+            <div id="prices">
+                <h5 />Prices:
+                Between $
+                <input name="PriceMin" type="number" min="0.00" max="100.00" step="0.01" placeholder="min" value="@Model.PriceMin" />
+                and $
+                <input name="PriceMax" type="number" min="0.00" max="100.00" step="0.01" placeholder="min" value="@Model.PriceMax" />
+            </div>
+        </div>
+
+        <hr class="rounded">
+        <div class="row">
+            <div class="column left">
+                <p>Item/Size</p>
+            </div>
+            <div class="column middle">
+                <p>Calories</p>
+            </div>
+            <div class="column right">
+                <p>Price</p>
+            </div>
+        </div>
+
+        <div id="menu-item">
+            @foreach (IOrderItem item in Model.Items)
+            {
+                if (item is Entree entree)
+                {
+                    @if (!Menu.AlreadyContainsType(item))
+                    {
+                        <h2>Entrees</h2>
+                    }
                     <div class="row">
                         <div class="column left">
-                            <p>@item.Size</p>
+                            <h5>@entree</h5>
                         </div>
                         <div class="column middle">
-                            <p>@item.Calories</p>
+                            <p>@entree.Calories</p>
                         </div>
                         <div class="column right">
-                            <p>@String.Format("{0:C}", item.Price)</p>
+                            <p>@String.Format("{0:C}", entree.Price)</p>
                         </div>
                     </div>
                 }
-            }
-            <p></p>
-        </div>
-        <p></p>
-
-        <!--Lists the Drinks in order-->
-        <h2>
-            Drinks
-        </h2>
-        <div class="menu-item">
-            <p></p>
-            @foreach (Drink item in Menu.Drinks())
-            {
-                if (item is JerkedSoda)
+                if (item is Side side)
                 {
-                    <h5>@item.ToString().Remove(0, 16)</h5>
-                }
-                else
-                {
-                    <h5>@item.ToString().Remove(0, 5)</h5>
-                }
-                for (item.Size = Size.Small; item.Size <= Size.Large; item.Size++)
-                {
+                    if (!Menu.AlreadyContainsType(item))
+                    {
+                        <h2>Sides</h2>
+                    }
+                    if (!Menu.AlreadyContainsItemType(item))
+                    {
+                        <h5>@item.ToString().Remove(0, 5)</h5>
+                    }
                     <div class="row">
                         <div class="column left">
-                            <p>@item.Size</p>
+                            <p>@side.Size</p>
                         </div>
                         <div class="column middle">
-                            <p>@item.Calories</p>
+                            <p>@side.Calories</p>
                         </div>
                         <div class="column right">
-                            <p>@String.Format("{0:C}", item.Price)</p>
+                            <p>@String.Format("{0:C}", side.Price)</p>
+                        </div>
+                    </div>
+                }
+                <p></p>
+                if (item is Drink drink)
+                {
+                    if (!Menu.AlreadyContainsType(item))
+                    {
+                        <h2>Drinks</h2>
+                    }
+                    if (!Menu.AlreadyContainsItemType(item))
+                    {
+                        if (drink is JerkedSoda)
+                        {
+                            if (drink.Size == Size.Medium)
+                            {
+                                <h5>@drink.ToString().Remove(0, 17)</h5>
+                            }
+                            else
+                            {
+                                <h5>@drink.ToString().Remove(0, 16)</h5>
+                            }
+                        }
+                        if (drink is CowboyCoffee && drink.Size == Size.Medium)
+                        {
+                            <h5>@item.ToString().Remove(0, 6)</h5>
+                        }
+                        else if (!(drink is JerkedSoda))
+                        {
+                            <h5>@item.ToString().Remove(0, 5)</h5>
+                        }
+                    }
+                    <div class="row">
+                        <div class="column left">
+                            <p>@drink.Size</p>
+                        </div>
+                        <div class="column middle">
+                            <p>@drink.Calories</p>
+                        </div>
+                        <div class="column right">
+                            <p>@String.Format("{0:C}", drink.Price)</p>
                         </div>
                     </div>
                 }
             }
-            <p></p>
         </div>
-    </div>
+    </form>
+</div>

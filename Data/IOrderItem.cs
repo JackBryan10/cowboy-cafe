@@ -12,6 +12,11 @@ namespace CowboyCafe.Data
     public interface IOrderItem
     {
         /// <summary>
+        /// Gets the calories of that Order Item
+        /// </summary>
+        uint Calories { get; }
+
+        /// <summary>
         /// Gets the price of that Order Item
         /// </summary>
         double Price { get; }
