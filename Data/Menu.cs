@@ -1,21 +1,28 @@
 ﻿/* Author: Jack Walter
  * Class Name: Menu.cs
- * Purpose: Creates IEnumberable lists of individual IOrderItems or 
- *          all IOrderItems on the CowboyCafe Menu
+ * Purpose: Creates Lists of individual IOrderItems or all IOrderItems on the CowboyCafe Menu & 
+ *          searches and filters through the list 
 */
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Creates IEnumberable lists of individual IOrderItems or all 
-    /// IOrderItems on the CowboyCafe Menu
+    /// Creates Lists of individual IOrderItems or all IOrderItems on the CowboyCafe Menu & 
+    /// searches and filters through the list
     /// </summary>
     public static class Menu
     {
+        /// <summary>
+        /// Gets the possible Categories 
+        /// </summary>
+        public static string[] Categories
+        {
+            get => new string[] { "Entrees", "Sides", "Drinks" };
+        }
+
         /// <summary>
         /// Creates an IEnumerable list containing a single instance of every Entree
         /// </summary>
@@ -36,9 +43,9 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Creates an IEnumerable list containing a single instance of every Side
+        /// Creates an IEnumerable list containing a single instance of every Side and size
         /// </summary>
-        /// <returns>An IEnumerable list containing a single instance of every Side</returns>
+        /// <returns>An IEnumerable list containing a single instance of every Side and size</returns>
         public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> list = new List<IOrderItem>();
@@ -70,12 +77,10 @@ namespace CowboyCafe.Data
             return list;
         }
 
-
-
         /// <summary>
-        /// Creates an IEnumerable list containing a single instance of every Drink
+        /// Creates an IEnumerable list containing a single instance of every Drink and size
         /// </summary>
-        /// <returns>An IEnumerable list containing a single instance of every Drink</returns>
+        /// <returns>An IEnumerable list containing a single instance of every Drink and size</returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
             List<IOrderItem> list = new List<IOrderItem>();
@@ -107,9 +112,9 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Creates an IEnumerable list containing a single instance of every IOrderItem
+        /// Creates a list containing a instance of every type of IOrderItem
         /// </summary>
-        /// <returns>An IEnumerable list containing a single instance of every IOrderItem</returns>
+        /// <returns>List containing a instance of every type of IOrderItem</returns>
         public static IEnumerable<IOrderItem> CompleteMenu()
         {
             List<IOrderItem> list = new List<IOrderItem>();
@@ -129,24 +134,11 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Gets the possible Categories 
+        /// Searches for whether a matching string exists in the list of menu items
         /// </summary>
-        public static string[] Categories
-        {
-            get => new string[]
-            {
-                "Entrees",
-                "Sides",
-                "Drinks"
-            };
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="items"></param>
-        /// <param name="terms"></param>
-        /// <returns></returns>
+        /// <param name="items">Unfiltered List of menu items</param>
+        /// <param name="terms">String of search terms</param>
+        /// <returns>Filtered list of menu items</returns>
         public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> items, string terms)
         {
             categoryList = new List<string>();
@@ -165,13 +157,145 @@ namespace CowboyCafe.Data
             return results;
         }
 
-        private static List<string> categoryList = new List<string>();
         /// <summary>
-        /// 
+        /// Filters the list of menu items by the Categories selected
         /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public static bool AlreadyContainsType(IOrderItem item)
+        /// <param name="items">Unfiltered List of menu items</param>
+        /// <param name="categories">Categories specified to display</param>
+        /// <returns>Filtered list of menu items</returns>
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories)
+        {
+            if (categories == null || categories.Count() == 0) { return items; }
+
+            categoryList = new List<string>();
+            itemList = new List<string>();
+
+            List<IOrderItem> results = new List<IOrderItem>();
+            foreach (IOrderItem item in items)
+            {
+                if (item is Entree && categories.Contains("Entrees"))
+                {
+                    results.Add(item);
+                }
+                else if (item is Side && categories.Contains("Sides"))
+                {
+                    results.Add(item);
+                }
+                else if (item is Drink && categories.Contains("Drinks"))
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the list of menu items by the specified Calorie range 
+        /// </summary>
+        /// <param name="items">Unfiltered List of menu items</param>
+        /// <param name="min">Minimum specified value of calories</param>
+        /// <param name="max">Maximum specified value of calories</param>
+        /// <returns>Filtered list of menu items</returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, uint? min, uint? max)
+        {
+            categoryList = new List<string>();
+            itemList = new List<string>();
+
+            // neither a maximum nor minimum specified
+            if (min == null && max == null) return items;
+
+            var results = new List<IOrderItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+                return results;
+            }
+
+            // only a minimum specified 
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IOrderItem item in items)
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the list of menu items by the specified Price range 
+        /// </summary>
+        /// <param name="items">Unfiltered List of menu items</param>
+        /// <param name="min">Minimum specified price value</param>
+        /// <param name="max">Maximum specified price value</param>
+        /// <returns>Filtered list of menu items</returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            categoryList = new List<string>();
+            itemList = new List<string>();
+
+            // neither a maximum nor minimum specified
+            if (min == null && max == null) return items;
+
+            var results = new List<IOrderItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+                return results;
+            }
+
+            // only a minimum specified 
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IOrderItem item in items)
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// List of types of categories that exist within the filtered menu
+        /// </summary>
+        private static List<string> categoryList = new List<string>();
+
+        /// <summary>
+        /// Determines whether the list already contains the header for the Category (for Displaying purposes)
+        /// </summary>
+        /// <param name="item">Item to evaluate</param>
+        /// <returns>Boolean value</returns>
+        public static bool AlreadyContainsCategory(IOrderItem item)
         {
             if (item is Entree)
             {
@@ -203,12 +327,16 @@ namespace CowboyCafe.Data
             return false;
         }
 
-        private static List<string> itemList = new List<string>();
         /// <summary>
-        /// 
+        /// List of types of drinks and sides that exist within the filtered menu
         /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
+        private static List<string> itemList = new List<string>();
+
+        /// <summary>
+        /// Determines whether the list already contains the header for the Drink and Side classes (for Displaying purposes)
+        /// </summary>
+        /// <param name="item">Item to evaluate</param>
+        /// <returns>Boolean value</returns>
         public static bool AlreadyContainsItemType(IOrderItem item)
         {
             if (item is Side side)
@@ -290,134 +418,6 @@ namespace CowboyCafe.Data
                 }
             }
             return false;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="items"></param>
-        /// <param name="categories"></param>
-        /// <returns></returns>
-        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories)
-        {
-            if (categories == null || categories.Count() == 0) { return items; }
-
-            categoryList = new List<string>();
-            itemList = new List<string>();
-
-            List<IOrderItem> results = new List<IOrderItem>();
-            foreach (IOrderItem item in items)
-            {
-                if (item is Entree && categories.Contains("Entrees"))
-                {
-                    results.Add(item);
-                }
-                else if (item is Side && categories.Contains("Sides"))
-                {
-                    results.Add(item);
-                }
-                else if (item is Drink && categories.Contains("Drinks"))
-                {
-                    results.Add(item);
-                }
-            }
-            return results;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="items"></param>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
-        /// <returns></returns>
-        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, uint? min, uint? max)
-        {
-            categoryList = new List<string>();
-            itemList = new List<string>();
-
-            // neither a maximum nor minimum specified
-            if (min == null && max == null) return items;
-
-            var results = new List<IOrderItem>();
-
-            // only a maximum specified
-            if (min == null)
-            {
-                foreach (IOrderItem item in items)
-                {
-                    if (item.Calories <= max) results.Add(item);
-                }
-                return results;
-            }
-
-            // only a minimum specified 
-            if (max == null)
-            {
-                foreach (IOrderItem item in items)
-                {
-                    if (item.Calories >= min) results.Add(item);
-                }
-                return results;
-            }
-
-            // Both minimum and maximum specified
-            foreach (IOrderItem item in items)
-            {
-                if (item.Calories >= min && item.Calories <= max)
-                {
-                    results.Add(item);
-                }
-            }
-            return results;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="items"></param>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
-        /// <returns></returns>
-        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
-        {
-            categoryList = new List<string>();
-            itemList = new List<string>();
-
-            // neither a maximum nor minimum specified
-            if (min == null && max == null) return items;
-
-            var results = new List<IOrderItem>();
-
-            // only a maximum specified
-            if (min == null)
-            {
-                foreach (IOrderItem item in items)
-                {
-                    if (item.Price <= max) results.Add(item);
-                }
-                return results;
-            }
-
-            // only a minimum specified 
-            if (max == null)
-            {
-                foreach (IOrderItem item in items)
-                {
-                    if (item.Price >= min) results.Add(item);
-                }
-                return results;
-            }
-
-            // Both minimum and maximum specified
-            foreach (IOrderItem item in items)
-            {
-                if (item.Price >= min && item.Price <= max)
-                {
-                    results.Add(item);
-                }
-            }
-            return results;
         }
     }
 }

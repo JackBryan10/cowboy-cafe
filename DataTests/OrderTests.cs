@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
 
@@ -10,6 +8,7 @@ namespace CowboyCafe.DataTests
     {
         public class MockOrderItem : IOrderItem
         {
+            public uint Calories { get; set; }
             public double Price { get; set; }
 
             public List<string> SpecialInstructions { get; set; } = new List<string>();

@@ -65,7 +65,7 @@
             {
                 if (item is Entree entree)
                 {
-                    @if (!Menu.AlreadyContainsType(item))
+                    @if (!Menu.AlreadyContainsCategory(item))
                     {
                         <h2>Entrees</h2>
                     }
@@ -83,7 +83,7 @@
                 }
                 if (item is Side side)
                 {
-                    if (!Menu.AlreadyContainsType(item))
+                    if (!Menu.AlreadyContainsCategory(item))
                     {
                         <h2>Sides</h2>
                     }
@@ -106,7 +106,7 @@
                 <p></p>
                 if (item is Drink drink)
                 {
-                    if (!Menu.AlreadyContainsType(item))
+                    if (!Menu.AlreadyContainsCategory(item))
                     {
                         <h2>Drinks</h2>
                     }
