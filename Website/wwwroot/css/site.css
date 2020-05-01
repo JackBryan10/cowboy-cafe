@@ -15,6 +15,7 @@ a {
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
+    opacity: 0.5;
     border-color: #1861ac;
 }
 
@@ -74,11 +75,11 @@ body {
 }
 
 /*Font for the Website title*/
-.cowboy-font {
+#cowboy-title h1 {
     font-family: Playbill;
 }
 
-.cowboy-font-body {
+#cowboy-title h5{
     font-family: Playbill;
     font-size: 32px;
 }
@@ -93,18 +94,19 @@ body {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-    #menu-item > p {
-        padding: 0;
-        margin: 0;
-        font-size: 1.2rem;
-    }
+#menu-item > p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+}
 
-    #menu-item > h2 {
-        border-top: 2px solid lightgray;
-    }
-    #menu-item > h5{
-        border-top: 8px;
-    }
+#menu-item > h2 {
+    border-top: 2px solid lightgray;
+}
+
+#menu-item > h5 {
+    border-top: 8px;
+}
 
 /*Columns for the different menu item details*/
 .column {
@@ -119,7 +121,7 @@ body {
         margin: 0;
     }
 
-/********Columns for Entree items********/
+/********Columns for the Menu items********/
 /*left column*/
 .left {
     width: 37.5%;
@@ -147,11 +149,15 @@ body {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .08);
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 2;
     text-align: center;
 }
 
+#search input[type=checkbox]:hover {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.2);
+}
 
+/*Category list*/
 #search, #category, #calories, #prices {
     float: none;
     display: flex;
@@ -161,26 +167,47 @@ body {
     margin-right: 5px;
 }
 
+/*Search Button*/
 .searchButton {
+    float: left;
     width: 25%;
+    padding: 10px;
+    background: #2196F3;
+    border: 1px  grey;
+    border-left: none;
+    cursor: pointer;
     border-radius: 20px;
     border: 1px lightgray solid;
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.08);
-    text-align: center;
+    z-index: 2;
 }
 
+/*Search Button hover*/
+#search button:hover {
+    background: #0b7dda;
+}
+
+/*Search Button Icon*/
+#search-image {
+    width: 25px;
+    height: 25px;
+}
+
+/*Category Checkboxes*/
 #category input[type=checkbox] {
     width: 1.5rem;
     height: 1.5rem;
     vertical-align: bottom;
 }
 
+/*Rounder divider*/
 hr.rounded {
     border-top: 4px solid lightgray;
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .08);
     border-radius: 5px;
 }
 
+/*Calories and Price text boxes*/
 #filters input[type=number] {
     width: 4.5rem;
     border: 1px lightgray solid;

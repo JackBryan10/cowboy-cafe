@@ -4,20 +4,22 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-3 cowboy-font">Cowboy Cafe</h1>
-    <h5 class="cowboy-font-body">
-        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
-        Shake off the dust on your boots and sake your thirst with one of our old-fashioned
-        hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the mighty
-        Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
-    </h5>
+<div class="text-center" style="background-image: url('~/Images/Chuckwagon_Texas_1900.jpg')">
+    <div id="cowboy-title">
+        <h1 class="display-3">Cowboy Cafe</h1>
+        <h5>
+            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+            Shake off the dust on your boots and sake your thirst with one of our old-fashioned
+            hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the mighty
+            Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
+        </h5>
+    </div>
     <hr class="rounded">
     <form id="menu" method="post">
 
         <div id="search">
-            <input type="text" class="searchBar" name="SearchTerms" value="@Model.SearchTerms" size="50" />
-            <input type="submit" class="searchButton" value="Search">
+            <input type="text" class="searchBar" name="SearchTerms" placeholder="Search.." value="@Model.SearchTerms" size="50" />
+            <button type="submit" class="searchButton"><img id="search-image" src="~/Images/white_search_icon.png" /></button>
         </div>
 
         <div id="filters">
@@ -36,14 +38,14 @@
                 Between
                 <input name="CaloriesMin" type="number" min="0" max="5000" step="1" placeholder="min" value="@Model.CaloriesMin" />
                 and
-                <input name="CaloriesMax" type="number" min="0" max="5000" step="1" placeholder="min" value="@Model.CaloriesMax" />
+                <input name="CaloriesMax" type="number" min="0" max="5000" step="1" placeholder="max" value="@Model.CaloriesMax" />
             </div>
             <div id="prices">
                 <h5 />Prices:
                 Between $
                 <input name="PriceMin" type="number" min="0.00" max="100.00" step="0.01" placeholder="min" value="@Model.PriceMin" />
                 and $
-                <input name="PriceMax" type="number" min="0.00" max="100.00" step="0.01" placeholder="min" value="@Model.PriceMax" />
+                <input name="PriceMax" type="number" min="0.00" max="100.00" step="0.01" placeholder="max" value="@Model.PriceMax" />
             </div>
         </div>
 
@@ -59,6 +61,7 @@
                 <p>Price</p>
             </div>
         </div>
+        <!--<img id="cowboy-background" src="~/Images/Chuckwagon_Texas_1900.jpg" />-->
 
         <div id="menu-item">
             @foreach (IOrderItem item in Model.Items)
