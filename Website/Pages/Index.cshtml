@@ -134,12 +134,12 @@
                             if (drink.Size == Size.Medium)
                             {
                                 <h5>@drink.ToString().Remove(0, 17)</h5>
-                                <p>Cream Soda, Birch Beer, Root Beer, Sarsparilla</p>
+                                <p style="background-color: rgba(220, 54, 0, 0.35); border-radius: 20px;">Cream Soda, Orange Soda, Birch Beer, Root Beer, Sarsparilla</p>
                             }
                             else
                             {
                                 <h5>@drink.ToString().Remove(0, 16)</h5>
-                                <!--<p style="background-color: rgba(220, 54, 0, 0.35); border-radius: 20px;">Cream Soda, Orange Soda,  Birch Beer, Root Beer, Sarsparilla</p>-->
+                                <p style="background-color: rgba(220, 54, 0, 0.35); border-radius: 20px;">Cream Soda, Orange Soda, Birch Beer, Root Beer, Sarsparilla</p>
                             }
                         }
                         if (drink is CowboyCoffee && drink.Size == Size.Medium)
