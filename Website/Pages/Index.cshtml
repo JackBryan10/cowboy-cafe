@@ -4,7 +4,10 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center" style="background-image: url('~/Images/Chuckwagon_Texas_1900.jpg')">
+<div class="text-center" style="
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 30px;
+    padding: 10px;">
     <div id="cowboy-title">
         <h1 class="display-3">Cowboy Cafe</h1>
         <h5>
@@ -14,9 +17,10 @@
             Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
         </h5>
     </div>
-    <hr class="rounded">
-    <form id="menu" method="post">
 
+    <hr class="rounded">
+
+    <form method="post">
         <div id="search">
             <input type="text" class="searchBar" name="SearchTerms" placeholder="Search.." value="@Model.SearchTerms" size="50" />
             <button type="submit" class="searchButton"><img id="search-image" src="~/Images/white_search_icon.png" /></button>
@@ -41,7 +45,7 @@
                 <input name="CaloriesMax" type="number" min="0" max="5000" step="1" placeholder="max" value="@Model.CaloriesMax" />
             </div>
             <div id="prices">
-                <h5 />Prices:
+                <h5 />Price:
                 Between $
                 <input name="PriceMin" type="number" min="0.00" max="100.00" step="0.01" placeholder="min" value="@Model.PriceMin" />
                 and $
@@ -50,31 +54,30 @@
         </div>
 
         <hr class="rounded">
+
         <div class="row">
             <div class="column left">
-                <p>Item/Size</p>
+                <h5>Item/Size</h5>
             </div>
             <div class="column middle">
-                <p>Calories</p>
+                <h5>Calories</h5>
             </div>
             <div class="column right">
-                <p>Price</p>
+                <h5>Price</h5>
             </div>
         </div>
-        <!--<img id="cowboy-background" src="~/Images/Chuckwagon_Texas_1900.jpg" />-->
 
-        <div id="menu-item">
-            @foreach (IOrderItem item in Model.Items)
-            {
-                if (item is Entree entree)
+        <div class="card-group" id="menu-item">
+            <div class="card">
+                @foreach (Entree entree in Model.Entrees)
                 {
-                    @if (!Menu.AlreadyContainsCategory(item))
+                    @if (!Menu.AlreadyContainsCategory(entree))
                     {
                         <h2>Entrees</h2>
                     }
                     <div class="row">
                         <div class="column left">
-                            <h5>@entree</h5>
+                            <h5 >@entree</h5>
                         </div>
                         <div class="column middle">
                             <p>@entree.Calories</p>
@@ -82,17 +85,27 @@
                         <div class="column right">
                             <p>@String.Format("{0:C}", entree.Price)</p>
                         </div>
+                        
                     </div>
                 }
-                if (item is Side side)
+            </div>
+            <div class="card">
+                @foreach (Side side in Model.Sides)
                 {
-                    if (!Menu.AlreadyContainsCategory(item))
+                    if (!Menu.AlreadyContainsCategory(side))
                     {
                         <h2>Sides</h2>
                     }
-                    if (!Menu.AlreadyContainsItemType(item))
+                    if (!Menu.AlreadyContainsItemType(side))
                     {
-                        <h5>@item.ToString().Remove(0, 5)</h5>
+                        if (side.Size == Size.Medium)
+                        {
+                            <h5>@side.ToString().Remove(0, 6)</h5>
+                        }
+                        else
+                        {
+                            <h5>@side.ToString().Remove(0, 5)</h5>
+                        }
                     }
                     <div class="row">
                         <div class="column left">
@@ -106,33 +119,36 @@
                         </div>
                     </div>
                 }
-                <p></p>
-                if (item is Drink drink)
+            </div>
+            <div class="card">
+                @foreach (Drink drink in Model.Drinks)
                 {
-                    if (!Menu.AlreadyContainsCategory(item))
+                    if (!Menu.AlreadyContainsCategory(drink))
                     {
                         <h2>Drinks</h2>
                     }
-                    if (!Menu.AlreadyContainsItemType(item))
+                    if (!Menu.AlreadyContainsItemType(drink))
                     {
                         if (drink is JerkedSoda)
                         {
                             if (drink.Size == Size.Medium)
                             {
                                 <h5>@drink.ToString().Remove(0, 17)</h5>
+                                <p>Cream Soda, Birch Beer, Root Beer, Sarsparilla</p>
                             }
                             else
                             {
                                 <h5>@drink.ToString().Remove(0, 16)</h5>
+                                <!--<p style="background-color: rgba(220, 54, 0, 0.35); border-radius: 20px;">Cream Soda, Orange Soda,  Birch Beer, Root Beer, Sarsparilla</p>-->
                             }
                         }
                         if (drink is CowboyCoffee && drink.Size == Size.Medium)
                         {
-                            <h5>@item.ToString().Remove(0, 6)</h5>
+                            <h5>@drink.ToString().Remove(0, 6)</h5>
                         }
                         else if (!(drink is JerkedSoda))
                         {
-                            <h5>@item.ToString().Remove(0, 5)</h5>
+                            <h5>@drink.ToString().Remove(0, 5)</h5>
                         }
                     }
                     <div class="row">
@@ -147,7 +163,7 @@
                         </div>
                     </div>
                 }
-            }
+            </div>
         </div>
     </form>
 </div>

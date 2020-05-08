@@ -5,6 +5,7 @@ a.navbar-brand {
     white-space: normal;
     text-align: center;
     word-break: break-all;
+    font-size: 2rem;
 }
 
 /* Provide sufficient contrast against white background */
@@ -28,13 +29,25 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 @media (min-width: 768px) {
     html {
-        font-size: 22px;
+        font-size: 20px;
     }
+}
+
+@media (max-width: 490px) {
+    html{
+        font-size: 15px;
+    }
+}
+
+/*For displaying the categories in 3 or 1 column*/
+.card{
+    background-color: transparent;
+    border: none;
 }
 
 .border-top {
@@ -46,7 +59,7 @@ html {
 }
 
 .box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 4, .15);
 }
 
 button.accept-policy {
@@ -71,41 +84,40 @@ body {
     bottom: 0;
     width: 100%;
     white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.34);
     line-height: 60px; /* Vertically center the text there */
 }
 
 /*Font for the Website title*/
 #cowboy-title h1 {
     font-family: Playbill;
+    font-size: 6rem;
 }
 
-#cowboy-title h5{
+#cowboy-title h5 {
     font-family: Playbill;
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 /*For Items on the Menu*/
-.menu-item {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    border-top: 2px solid lightgray;
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
 
-#menu-item > p {
+#menu-item p {
     padding: 0;
     margin: 0;
     font-size: 1.2rem;
 }
 
-#menu-item > h2 {
-    border-top: 2px solid lightgray;
+#menu-item h2 {
+    padding: 0;
+    margin: 0;
+    border-top: 5px solid;
+    border-color: rgba(0, 0, 0, .45);
+    border-radius: 30px;
 }
 
 #menu-item > h5 {
-    border-top: 8px;
+    margin: 0;
+    padding: 0;
 }
 
 /*Columns for the different menu item details*/
@@ -116,10 +128,10 @@ body {
     text-align: right;
 }
 
-    .column > p {
-        padding: 0;
-        margin: 0;
-    }
+.column > p {
+    padding: 0;
+    margin: 0;
+}
 
 /********Columns for the Menu items********/
 /*left column*/
@@ -140,22 +152,28 @@ body {
     text-align: center;
 }
 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /*Search Bar*/
 .searchBar {
     width: 75%;
-    border-radius: 20px;
-    border: 1px lightgray solid;
+    border-radius: 30px;
+    border: 1px rgba(0, 0, 0, .45);
     padding: 5px 5px 5px 25px;
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .08);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .2);
     top: 0;
     left: 0;
     z-index: 2;
     text-align: center;
 }
 
-#search input[type=checkbox]:hover {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.2);
-}
+    .searchBar:hover {
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.4);
+    }
 
 /*Category list*/
 #search, #category, #calories, #prices {
@@ -172,50 +190,65 @@ body {
     float: left;
     width: 25%;
     padding: 10px;
-    background: #2196F3;
-    border: 1px  grey;
+    background: rgba(220, 54, 0, 0.85);
+    border: 1px grey;
     border-left: none;
     cursor: pointer;
-    border-radius: 20px;
-    border: 1px lightgray solid;
+    border-radius: 30px;
+    border: 1px rgba(220, 54, 0, 0.64);
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.08);
     z-index: 2;
 }
 
-/*Search Button hover*/
-#search button:hover {
-    background: #0b7dda;
-}
+    /*Search Button hover*/
+    .searchButton:hover {
+        background: rgb(220, 54, 0);
+    }
 
-/*Search Button Icon*/
+/*Search Button Icon for Search Button*/
 #search-image {
-    width: 25px;
-    height: 25px;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 /*Category Checkboxes*/
 #category input[type=checkbox] {
     width: 1.5rem;
     height: 1.5rem;
-    vertical-align: bottom;
+    vertical-align: middle;
 }
+
+    #category input[type=checkbox]:hover {
+        box-shadow: 0 .25rem .75rem rgba(220, 54, 0, 0.55);
+        background-color: saddlebrown;
+        border-color: black;
+        border-radius: 5px;
+    }
 
 /*Rounder divider*/
 hr.rounded {
-    border-top: 4px solid lightgray;
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .08);
+    border-top: 5px solid;
+    border-color: rgba(0, 0, 0, .45);
     border-radius: 5px;
 }
 
 /*Calories and Price text boxes*/
 #filters input[type=number] {
-    width: 4.5rem;
-    border: 1px lightgray solid;
+    width: 4.6rem;
+    border: 2px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     padding: 5px 5px 5px 15px;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.15);
+    text-align: center;
 }
 
+    /*Calories and Price text boxes hover*/
+    #filters input[type=number]:hover {
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.4);
+    }
+
 #filters h5 {
-    margin-bottom: 0.2rem;
     width: 100%;
+    padding: 0px;
+    margin: 0px;
 }

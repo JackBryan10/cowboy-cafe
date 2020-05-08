@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CowboyCafe.Data;
+using System.Linq;
 
 namespace Website.Pages
 {
@@ -56,10 +57,28 @@ namespace Website.Pages
         public double? PriceMax { get; set; }
 
         /// <summary>
+        /// Gets and sets the list of Entrees to display
+        /// </summary>
+        public IEnumerable<IOrderItem> Entrees { get; protected set; }
+
+        /// <summary>
+        /// Gets and sets the list of Sides to display
+        /// </summary>
+        public IEnumerable<IOrderItem> Sides { get; protected set; }
+
+        /// <summary>
+        /// Gets and sets the list of Drinks to display
+        /// </summary>
+        public IEnumerable<IOrderItem> Drinks { get; protected set; }
+
+        /// <summary>
         /// Gets the initial results for display
         /// </summary>
         public void OnGet()
         {
+            Entrees = Menu.Entrees();
+            Sides = Menu.Sides();
+            Drinks = Menu.Drinks();
             Items = Menu.CompleteMenu();
             Items = Menu.Search(Items, SearchTerms);
         }
@@ -74,6 +93,9 @@ namespace Website.Pages
             Items = Menu.FilterByCategory(Items, Categories);
             Items = Menu.FilterByCalories(Items, CaloriesMin, CaloriesMax);
             Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);
+            Entrees = Items.OfType<Entree>();
+            Sides = Items.OfType<Side>();
+            Drinks = Items.OfType<Drink>();
         }
     }
 }
